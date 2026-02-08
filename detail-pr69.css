@@ -525,7 +525,7 @@ a {
     display: flex;
     flex-wrap: wrap;
     justify-content: center;
-    column-gap: 10%;
+    column-gap: 7%;
     row-gap: 15px;
 }
 .item__gr-infor {
