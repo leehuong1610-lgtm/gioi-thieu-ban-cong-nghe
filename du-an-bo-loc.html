@@ -3,396 +3,18 @@
     <head>
         <meta charset="UTF-8">
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
-        <title>Ban Công Nghệ - Hải Trình Tương Lai</title>
+        <title>Ban Công Nghệ - Dự án</title>
+        <link rel="stylesheet" href="du-an-bo-loc.css">
         <link href="https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&family=Quicksand:wght@300..700&display=swap" rel="stylesheet">
-        <style>
-            * {
-                margin: 0;
-                padding: 0;
-                box-sizing: border-box;
-                font-family: 'Quicksand', sans-serif;
-            }
-
-            body {
-                background-color: #F0F9FF;
-                padding: 20px 80px;
-                display: flex;
-                flex-direction: column;
-                gap: 64px;
-                overflow-x: hidden;
-            }
-
-            header {
-                position: sticky;
-                top: 20px;
-                display: flex;
-                justify-content: space-between;
-                align-items: center;
-                padding: 24px 40px;
-                background-color: #FFFFFFE5;
-                border-radius: 48px;
-                border: 2px solid #FFFFFFCC;
-                box-shadow: 12px 12px 24px 0px #CBDBE8;
-                backdrop-filter: blur(12px);
-                z-index: 1000;
-                flex-wrap: nowrap;
-                gap: 12px;
-                min-width: 0;
-            }
-
-            .header_logo {
-                display: flex;
-                align-items: center;
-                flex-shrink: 0; 
-            }
-
-            .header_logo img {
-                height: 48px;
-                width: auto;
-            }
-
-            .header_text {
-                margin-left: 8px;
-                font-weight: 700;
-                font-size: 24px;
-                line-height: 32px;
-                letter-spacing: -1.2px;
-                vertical-align: middle;
-                text-transform: uppercase;
-                background: linear-gradient(90deg, #061826 0%, #2FA0C6 50%, #58C9F3 100%);
-                -webkit-background-clip: text;
-                background-clip: text;
-                -webkit-text-fill-color: transparent;
-                white-space: nowrap;
-                flex-shrink: 1;
-            }
-
-            .header_nav {
-                display: flex;
-                align-items: center;
-                flex-shrink: 1;
-                min-width: 0;
-            }
-
-            .header_nav_item {
-                text-decoration: none;
-                color: #333;
-                padding-left: 32px; 
-                font-size: 16px;
-                font-weight: 700;
-                line-height: 24px;
-                vertical-align: middle;
-                transition: color 0.3s;
-                white-space: nowrap;
-                flex-shrink: 1;
-            }
-
-            .header_nav_item:hover {
-                color: #2FA0C6;
-            }
-
-            .header_cta-button {
-                background:linear-gradient(107.34deg, #2FA0C6 0%, #1C4E75 100%);
-                padding: 12px 32px;
-                border-radius: 30px;
-                box-shadow: 6px 6px 15px 0px #2FA0C64D;
-                cursor: pointer;
-                background-size: 200% auto;
-                transition: transform 0.3s, padding 0.3s;
-                flex-shrink: 0; 
-            }
-
-            .header_cta-link {
-                text-decoration: none;
-                font-weight: 700;
-                font-size: 14px;
-                line-height: 20px;
-                letter-spacing: 1.4px;
-                text-align: center;
-                vertical-align: middle;
-                text-transform: uppercase;
-                color: #FFFFFF;
-                white-space: nowrap;
-            }
-
-            .header_cta-button:hover {
-                transform: scale(1.05); 
-                background-position: right center;
-            }
-
-            .section-1 {
-                display: flex;
-                flex-direction: column;
-                align-items: center;
-                gap: 24px;
-                width: 100%;
-            }
-
-            .section-1_title {
-                font-weight: 700;
-                font-size: 56px;
-                line-height: 100%;
-                letter-spacing: 0%;
-                text-align: center;
-                vertical-align: middle;
-                color: #1C4E75;
-            }
-
-            .section-1_button-list {
-                display: flex;
-                gap: 16px;
-                align-items: center;
-            }
-
-            .filter-btn {
-                padding: 12px 28px;
-                border: 2px solid #FFFFFF;
-                box-shadow: 6px 6px 12px 0px #CBDBE8;
-                border-radius: 24px;
-                background-color: #FFFFFF;
-                font-weight: 700;
-                font-size: 13.3px;
-                line-height: 100%;
-                letter-spacing: 0%;
-                text-align: center;
-                vertical-align: middle;
-                color: #64748B;
-                cursor: pointer;
-                transition: 0.3s;
-            }
-
-            .filter-btn:hover {
-                background-color: #2FA0C6;
-                border: 2px solid #2FA0C6;
-                color: #FFFFFF;
-                transform: translateY(-3px);
-            }
-
-            .section-5 {
-                display: flex;
-                flex-direction: column;
-                align-items: center;
-                gap: 80px;
-                width: 100%;
-            }
-
-            .section-5_main {
-                display: grid;
-                grid-template-columns: repeat(3, 1fr); 
-                gap: 32px;
-                width: 100%;
-                max-width: 1200px;
-                justify-content: center;
-            }
-
-            .section-5_item {
-                display: flex;
-                text-decoration: none;
-                flex-direction: column;
-                background-color: #FFFFFF;
-                border-top: 2px solid #FFFFFFCC;
-                box-shadow: 12px 12px 24px 0px #CBDBE8;
-                border-radius: 48px;
-                overflow: hidden;
-                transition: transform 0.3s;
-                width: 100%;
-            }
-
-            .section-5_item:hover {
-                transform: scale(1.05); 
-            }
-
-            .section-5_item-image {
-                width: 100%;
-                height: 224px;
-                object-fit: cover;
-                padding: 16px;
-                border-radius: 48px;
-            }
-
-            .section-5_item-text {
-                display: flex;
-                flex-direction: column;
-                padding: 0px 32px 32px 32px;
-                gap: 16px;
-            }
-
-            .section-5_item-tag {
-                display: flex;
-                gap: 8px;
-                flex-wrap: wrap;
-            }
-
-            .section-5_item-tag-child {
-                border-radius: 14px;
-                font-weight: 700;
-                font-size: 12px;
-                color: #1C4E75;
-                background-color: #F0F9FF;
-                padding: 6px 14px;
-            }
-
-            .section-5_item-title {
-                font-weight: 700;
-                font-size: 22px;
-                color: #1C4E75;
-            }
-
-            .section-5_item-description {
-                font-weight: 400;
-                font-size: 14px;
-                line-height: 20px;
-                color: #64748B;
-            }
-
-            footer {
-                margin-top: 64px;
-                background-color: #061826;
-                border-radius: 64px;
-                padding: 80px;
-                display: flex;
-                flex-direction: column;
-                align-items: center;
-                gap: 64px;
-                position: relative;
-                overflow: hidden;
-                color: #FFFFFF;
-            }
-
-            .footer_glow {
-                position: absolute;
-                width: 300px;
-                height: 300px;
-                background-color: #2FA0C61A;
-                filter: blur(100px);
-                bottom: -150px;
-                right: -100px;
-            }
-
-            .footer_cta {
-                text-align: center;
-                display: flex;
-                flex-direction: column;
-                align-items: center;
-                gap: 24px;
-                z-index: 2;
-            }
-
-            .footer_cta-title {
-                font-weight: 700;
-                font-size: 40px;
-                line-height: 48px;
-            }
-
-            .footer_main {
-                display: flex;
-                flex-direction: row; 
-                justify-content: space-between;
-                width: 100%;
-                gap: 48px;
-                z-index: 2;
-            }
-
-            .footer_column {
-                display: flex;
-                flex-direction: column;
-                align-items: flex-start; 
-                gap: 16px;
-                flex: 1;
-            }
-
-            .footer_logo-box {
-                display: flex;
-                align-items: center;
-                gap: 12px;
-            }
-
-            .footer_text {
-                font-weight: 700;
-                font-size: 24px;
-                line-height: 32px;
-                letter-spacing: -1.2px;
-                vertical-align: middle;
-                text-transform: uppercase;
-                color: #1886ae;
-            }
-
-            .footer_column-title {
-                font-weight: 700;
-                font-size: 18px;
-                text-transform: uppercase;
-                letter-spacing: 1.2px;
-            }
-
-            .ad-1 {
-                list-style: none; 
-                display: flex; 
-                flex-direction: column; 
-                gap: 16px;
-                padding: 0;
-            }
-
-            .footer_column-text {
-                font-size: 14px;
-                line-height: 22px;
-                color: #FFFFFFB2;
-            }
-
-            .footer_column-text-1 {
-                text-decoration: none;
-                color: #FFFFFFB2;
-                transition: color 0.3s;
-            }
-            .footer_column-text-1:hover { 
-                color: #58C9F3; 
-            }
-
-            .footer_social {
-                display: flex;
-                gap: 16px;
-            }
-
-            .footer_social-icon {
-                width: 48px;
-                height: 48px;
-                border-radius: 50%;
-                background-color: #040b13;
-                display: flex;
-                align-items: center;
-                justify-content: center;
-                transition: 0.3s;
-                text-decoration: none;
-                flex-shrink: 0;
-            }
-
-            .footer_social-icon:hover {
-                background-color: #2FA0C6;
-                transform: translateY(-5px);
-            }
-
-            .footer_social-icon img {
-                width: 24px; 
-                height: 24px;
-                object-fit: contain;
-                display: block;
-                border-radius: 0;
-                background-color: transparent; 
-            }
-
-            .footer_bottom {
-                width: 100%;
-                text-align: center;
-                padding-top: 32px;
-                border-top: 1px solid #FFFFFF1A;
-                font-size: 12px;
-                letter-spacing: 4.8px;
-                color: #FFFFFF4D;
-                text-transform: uppercase;
-                z-index: 2;
-            }
-        </style>
+        
     </head>
     <body>
+        <input type="radio" name="filter" id="all" class="filter-input" checked>
+        <input type="radio" name="filter" id="website" class="filter-input">
+        <input type="radio" name="filter" id="mobile" class="filter-input">
+        <input type="radio" name="filter" id="uiux" class="filter-input">
+        <input type="radio" name="filter" id="personal" class="filter-input">
+
         <header>
             <div class="header_logo">
                 <a href="index.html"><img src="image/logo.svg" alt="Logo"></a>
@@ -411,23 +33,24 @@
         </header>
 
         <div class="section-1">
-
             <div class="section-1_title">
                 Kho lưu trữ dự án
             </div>
 
             <div class="section-1_button-list">
-                <button class="filter-btn active">Tất cả</button>
-                <button class="filter-btn">Website</button>
-                <button class="filter-btn">Mobile</button>
-                <button class="filter-btn">UI/UX Design</button>       
-                <button class="filter-btn">Personal</button>                                                                                                                                                         
+                <label class="filter-btn" for="all">Tất cả</label>
+                <label class="filter-btn" for="website">Website</label>
+                <label class="filter-btn" for="mobile">Mobile</label>
+                <label class="filter-btn" for="uiux">UX/UI</label>       
+                <label class="filter-btn" for="personal">Personal</label>                                                                                                                                                         
             </div>
         </div>
 
         <div id="projects" class="section-5">
             <div class="section-5_main">
-                <a href="#" class="section-5_item">
+
+                <!-- item 1 -->
+                <a href="#" class="section-5_item cat-uiux cat-website">
                     <img class="section-5_item-image" src="image/du-an-1.svg" alt="Dự án 1">
                     <div class="section-5_item-text">
                         <div class="section-5_item-tag">
@@ -439,7 +62,8 @@
                     </div>
                 </a>
 
-                <a href="#" class="section-5_item">
+                <!-- item 2 -->
+                <a href="#" class="section-5_item cat-uiux cat-website">
                     <img class="section-5_item-image" src="image/du-an-2.svg" alt="Dự án 2">
                     <div class="section-5_item-text">
                         <div class="section-5_item-tag">
@@ -451,7 +75,8 @@
                     </div>
                 </a>
 
-                <a href="#" class="section-5_item">
+                <!-- item 3 -->
+                <a href="#" class="section-5_item cat-uiux cat-website">
                     <img class="section-5_item-image" src="image/du-an-3.svg" alt="Dự án 3">
                     <div class="section-5_item-text">
                         <div class="section-5_item-tag">
@@ -463,7 +88,8 @@
                     </div>
                 </a>
 
-                <a href="#" class="section-5_item">
+                <!-- item 4 -->
+                <a href="#" class="section-5_item cat-uiux cat-website">
                     <img class="section-5_item-image" src="image/du-an-1.svg" alt="Dự án 1">
                     <div class="section-5_item-text">
                         <div class="section-5_item-tag">
@@ -475,63 +101,67 @@
                     </div>
                 </a>
 
-                <a href="#" class="section-5_item">
+                <!-- item 5 -->
+                <a href="#" class="section-5_item cat-mobile">
                     <img class="section-5_item-image" src="image/du-an-1.svg" alt="Dự án 1">
                     <div class="section-5_item-text">
                         <div class="section-5_item-tag">
-                            <div class="section-5_item-tag-child">UX/UI</div>
-                            <div class="section-5_item-tag-child">Website</div>
+                            <div class="section-5_item-tag-child">Mobile</div>
                         </div>
-                        <div class="section-5_item-title">Borcelle Restaurant</div>
-                        <div class="section-5_item-description">Trải nghiệm ẩm thực tinh tế ngay trên Website!</div>
+                        <div class="section-5_item-title">App Mobile Mẫu</div>
+                        <div class="section-5_item-description">Mô tả dự án mobile.</div>
                     </div>
                 </a>
 
-                <a href="#" class="section-5_item">
-                    <img class="section-5_item-image" src="image/du-an-1.svg" alt="Dự án 1">
+                <!-- item 6 -->
+                <a href="detail-prj6.html" class="section-5_item cat-personal">
+                    <img class="section-5_item-image" src="image/club-finder.png" alt="Dự án 6">
                     <div class="section-5_item-text">
                         <div class="section-5_item-tag">
-                            <div class="section-5_item-tag-child">UX/UI</div>
-                            <div class="section-5_item-tag-child">Website</div>
+                            <div class="section-5_item-tag-child">Personal</div>
                         </div>
-                        <div class="section-5_item-title">Borcelle Restaurant</div>
-                        <div class="section-5_item-description">Trải nghiệm ẩm thực tinh tế ngay trên Website!</div>
+                        <div class="section-5_item-title">Giới thiệu ClubFinder</div>
+                        <div class="section-5_item-description">Kết nối, tham gia và quản lý CLB IUH nhanh chóng, hiệu quả.</div>
                     </div>
                 </a>
 
-                <a href="#" class="section-5_item">
-                    <img class="section-5_item-image" src="image/du-an-1.svg" alt="Dự án 1">
+                <!-- item 7 -->
+                <a href="detail-prj7.html" class="section-5_item cat-uiux cat-website">
+                    <img class="section-5_item-image" src="image/food.png" alt="Dự án 7">
                     <div class="section-5_item-text">
                         <div class="section-5_item-tag">
                             <div class="section-5_item-tag-child">UX/UI</div>
                             <div class="section-5_item-tag-child">Website</div>
                         </div>
-                        <div class="section-5_item-title">Borcelle Restaurant</div>
-                        <div class="section-5_item-description">Trải nghiệm ẩm thực tinh tế ngay trên Website!</div>
+                        <div class="section-5_item-title">RamFood</div>
+                        <div class="section-5_item-description">Giải pháp quản lý quán ăn và đặt món thông minh bằng công nghệ AI.</div>
                     </div>
                 </a>
 
-                <a href="#" class="section-5_item">
-                    <img class="section-5_item-image" src="image/du-an-1.svg" alt="Dự án 1">
+                <!-- item 8 -->
+                <a href="detail-prj8.html" class="section-5_item cat-uiux cat-website">
+                    <img class="section-5_item-image" src="image/ai-logo.png" alt="Dự án 8">
                     <div class="section-5_item-text">
                         <div class="section-5_item-tag">
                             <div class="section-5_item-tag-child">UX/UI</div>
                             <div class="section-5_item-tag-child">Website</div>
                         </div>
-                        <div class="section-5_item-title">Borcelle Restaurant</div>
-                        <div class="section-5_item-description">Trải nghiệm ẩm thực tinh tế ngay trên Website!</div>
+                        <div class="section-5_item-title">AI Logo Maker</div>
+                        <div class="section-5_item-description">Thiết kế logo thông minh trong vài giây cùng AI.</div>
                     </div>
                 </a>
 
-                <a href="#" class="section-5_item">
-                    <img class="section-5_item-image" src="image/du-an-1.svg" alt="Dự án 1">
+                <!-- item 9 -->
+                <a href="detail-prj9.html" class="section-5_item cat-uiux cat-website">
+                    <img class="section-5_item-image" src="image/websitebcn.png" alt="Dự án 9">
                     <div class="section-5_item-text">
                         <div class="section-5_item-tag">
                             <div class="section-5_item-tag-child">UX/UI</div>
+                            <div class="section-5_item-tag-child">Personal</div>
                             <div class="section-5_item-tag-child">Website</div>
                         </div>
-                        <div class="section-5_item-title">Borcelle Restaurant</div>
-                        <div class="section-5_item-description">Trải nghiệm ẩm thực tinh tế ngay trên Website!</div>
+                        <div class="section-5_item-title">Giới Thiệu Website BCN</div>
+                        <div class="section-5_item-description">Hệ sinh thái kết nối câu lạc bộ sinh viên IUH.</div>
                     </div>
                 </a>
             </div>
