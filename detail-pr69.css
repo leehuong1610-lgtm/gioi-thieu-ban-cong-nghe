@@ -254,7 +254,8 @@ a {
 }
 .box__wrap--btn {
     position: sticky;
-    top: 70px;
+    top: 85px;
+    z-index: 100;
 }
 .main-section {
     margin: 0 auto;
