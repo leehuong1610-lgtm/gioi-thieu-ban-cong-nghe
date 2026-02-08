@@ -484,6 +484,8 @@ a {
     transition: all 0.4s ease-in-out;
 }
 .box-information {
+    position: sticky;
+    top: 150px;
     width: 100%;
     background-color: var(--text-white);
     border-radius: 25px;
