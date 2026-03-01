@@ -1,0 +1,338 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Quản lý Ban Công Nghệ</title>
+    <link href="https://fonts.googleapis.com/css2?family=Quicksand:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="dashboard.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/7.0.1/css/all.css">
+</head>
+<body>
+    <input type="checkbox" id="modal-toggle" style="display: none;">
+    <div id="sidebar">
+        <div class="sidebar-header">
+            <div class="logo-box">
+                <img src="image/logo.svg" alt="Logo">
+            </div>
+            <span class="sidebar-title">BCN PANEL</span>
+        </div>
+
+        <nav class="nav-list">
+            <a href="#" class="nav-item">
+                <i class="fa-solid fa-rectangle-list"></i>
+                <span>Tổng quan</span>
+            </a>
+            <a href="#" class="nav-item active">
+                <i class="fa-solid fa-users"></i>
+                <span>Thành viên</span>
+            </a>
+            <a href="#" class="nav-item">
+                <i class="fa-solid fa-calendar"></i>
+                <span>Hoạt động</span>
+            </a>
+            <a href="#" class="nav-item">
+                <i class="fa-solid fa-briefcase"></i>
+                <span>Dự án</span>
+            </a>
+            <a href="#" class="nav-item">
+                <i class="fa-solid fa-bell"></i>
+                <span>Thông báo</span>
+            </a>
+        </nav>
+
+        <div class="sidebar-footer">
+            <button class="btn-logout">
+                <i class="fa-solid fa-arrow-right-from-bracket"></i>
+                <span>Đăng xuất</span>
+            </button>
+        </div>
+    </div>
+
+    <div class="main">
+        <div class="header">
+            <div class="header-left">
+                <h1>Thành viên BCN</h1>
+            </div>
+            <div class="header-right">
+                <div class="user-profile">
+                    <div class="user-info">
+                        <p>Admin BCN</p>
+                        <span>Cốt cán</span>
+                    </div>
+                    <div class="avatar-box">
+                        <i class="fa-solid fa-shield"></i>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="content-body">
+            <div class="stats-grid">
+                <div class="stat-card">
+                    <div class="stat-info">
+                        <p>Tổng thành viên</p>
+                        <h3 id="stat-total">5</h3>
+                    </div>
+                    <div class="stat-icon violet">
+                        <i class="fa-solid fa-user-plus"></i>
+                    </div>
+                </div>
+                <div class="stat-card">
+                    <div class="stat-info">
+                        <p>Web App</p>
+                        <h3 id="stat-web">1</h3>
+                    </div>
+                    <div class="stat-icon blue">
+                        <i class="fa-solid fa-laptop"></i>
+                    </div>
+                </div>
+                <div class="stat-card">
+                    <div class="stat-info">
+                        <p>Mobile App</p>
+                        <h3 id="stat-mobile">2</h3>
+                    </div>
+                    <div class="stat-icon green">
+                        <i class="fa-solid fa-mobile"></i>
+                    </div>
+                </div>
+                <div class="stat-card">
+                    <div class="stat-info">
+                        <p>UI/UX Design</p>
+                        <h3 id="stat-design">1</h3>
+                    </div>
+                    <div class="stat-icon orange">
+                        <i class="fa-solid fa-palette"></i>
+                    </div>
+                </div>
+            </div>
+
+            <div class="section-card">
+                <div class="card-header">
+                    <div>
+                        <h2>Danh sách Thành viên</h2>
+                        <p>Quản lý thông tin và phân quyền cho các "thợ lặn".</p>
+                    </div>
+                   
+
+                    <label for="modal-toggle" class="btn-primary" style="cursor: pointer;">
+                        <i class="fa-solid fa-plus"></i>
+                        Thêm thành viên
+                    </label>
+                </div>
+
+                <div class="overflow-x-auto">
+                    <table>
+                        <thead>
+                            <tr>
+                                <th>Thành viên</th>
+                                <th>Thông tin</th>
+                                <th>Chuyên môn</th>
+                                <th>Ngày gia nhập</th>
+                                <th>Trạng thái</th>
+                                <th style="text-align: right;">Thao tác</th>
+                            </tr>
+                            
+                        </thead>
+                        <tbody id="member-table-body">
+                            <tr>
+                                <td>
+                                    <div class="member-info">
+                                        <div class="member-name">Trần Thị A</div>
+                                        <div class="member-id">MSSV: 21004521</div>
+                                    </div>
+                                </td>
+                                <td>
+                                    <div class="member-meta">
+                                        <div class="meta-gender">Nữ</div>
+                                        <div class="meta-birth">Sinh: 12/05/2003</div>
+                                    </div>
+                                </td>
+                                <td>
+                                    <span class="role-badge role-mobile">Mobile App</span>
+                                </td>
+                                <td>
+                                    <span class="date-text">10/01/2024</span>
+                                </td>
+                                <td>
+                                    <div class="status-pill">
+                                        <span class="status-dot"></span>
+                                        <span>Hoạt động</span>
+                                    </div>
+                                </td>
+                                <td style="text-align: right;">
+                                    <div class="actions">
+                                        <button class="btn-icon btn-edit"><i class="fa-regular fa-pen-to-square"></i></button>
+                                        <button class="btn-icon btn-delete"><i class="fa-solid fa-trash"></i></button>
+                                    </div>
+                                </td>
+                            </tr>
+
+                            <tr>
+                                <td>
+                                    <div class="member-info">
+                                        <div class="member-name">Trần Văn B</div>
+                                        <div class="member-id">MSSV: 21004521</div>
+                                    </div>
+                                </td>
+                                <td>
+                                    <div class="member-meta">
+                                        <div class="meta-gender">Nam</div>
+                                        <div class="meta-birth">Sinh: 12/05/2003</div>
+                                    </div>
+                                </td>
+                                <td>
+                                    <span class="role-badge role-web">Web App</span>
+                                </td>
+                                <td>
+                                    <span class="date-text">10/01/2024</span>
+                                </td>
+                                <td>
+                                    <div class="status-pill">
+                                        <span class="status-dot"></span>
+                                        <span>Hoạt động</span>
+                                    </div>
+                                </td>
+                                <td style="text-align: right;">
+                                    <div class="actions">
+                                        <button class="btn-icon btn-edit"><i class="fa-regular fa-pen-to-square"></i></button>
+                                        <button class="btn-icon btn-delete"><i class="fa-solid fa-trash"></i></button>
+                                    </div>
+                                </td>
+                            </tr>
+
+                            <tr>
+                                <td>
+                                    <div class="member-info">
+                                        <div class="member-name">Trần Thị C</div>
+                                        <div class="member-id">MSSV: 25694521</div>
+                                    </div>
+                                </td>
+                                <td>
+                                    <div class="member-meta">
+                                        <div class="meta-gender">Nữ</div>
+                                        <div class="meta-birth">Sinh: 12/05/2007</div>
+                                    </div>
+                                </td>
+                                <td>
+                                    <span class="role-badge role-design">UI/UX Design</span>
+                                </td>
+                                <td>
+                                    <span class="date-text">10/01/2024</span>
+                                </td>
+                                <td>
+                                    <div class="status-pill">
+                                        <span class="status-dot"></span>
+                                        <span>Hoạt động</span>
+                                    </div>
+                                </td>
+                                <td style="text-align: right;">
+                                    <div class="actions">
+                                        <button class="btn-icon btn-edit"><i class="fa-regular fa-pen-to-square"></i></button>
+                                        <button class="btn-icon btn-delete"><i class="fa-solid fa-trash"></i></button>
+                                    </div>
+                                </td>
+                            </tr>
+
+                            <tr>
+                                <td>
+                                    <div class="member-info">
+                                        <div class="member-name">Trần Văn D</div>
+                                        <div class="member-id">MSSV: 23004521</div>
+                                    </div>
+                                </td>
+                                <td>
+                                    <div class="member-meta">
+                                        <div class="meta-gender">Nam</div>
+                                        <div class="meta-birth">Sinh: 12/05/2005</div>
+                                    </div>
+                                </td>
+                                <td>
+                                    <span class="role-badge role-mobile">Mobile App</span>
+                                </td>
+                                <td>
+                                    <span class="date-text">10/01/2024</span>
+                                </td>
+                                <td>
+                                    <div class="status-pill">
+                                        <span class="status-dot"></span>
+                                        <span>Hoạt động</span>
+                                    </div>
+                                </td>
+                                <td style="text-align: right;">
+                                    <div class="actions">
+                                        <button class="btn-icon btn-edit"><i class="fa-regular fa-pen-to-square"></i></button>
+                                        <button class="btn-icon btn-delete"><i class="fa-solid fa-trash"></i></button>
+                                    </div>
+                                </td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="modal-overlay" id="modal">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h3 id="modal-title">Hồ sơ thành viên</h3>
+                <button class="btn-icon">
+                    <i data-lucide="x"></i>
+                </button>
+            </div>
+            
+            <form id="member-form">
+                <input type="hidden" id="edit-id">
+                <div class="form-grid">
+                    <div class="form-group">
+                        <label class="form-label">Họ và tên</label>
+                        <input type="text" id="name" class="form-input" required placeholder="VD: Nguyễn Văn A">
+                    </div>
+                    <div class="form-group">
+                        <label class="form-label">Giới tính</label>
+                        <select id="gender" class="form-select">
+                            <option value="Nam">Nam</option>
+                            <option value="Nữ">Nữ</option>
+                        </select>
+                    </div>
+                </div>
+
+                <div class="form-grid">
+                    <div class="form-group">
+                        <label class="form-label">Mã số sinh viên (MSSV)</label>
+                        <input type="text" id="studentId" class="form-input" required placeholder="VD: 22687121">
+                    </div>
+                    <div class="form-group">
+                        <label class="form-label">Ngày sinh</label>
+                        <input type="date" id="birthDate" class="form-input" required>
+                    </div>
+                </div>
+                
+                <div class="form-grid">
+                    <div class="form-group">
+                        <label class="form-label">Chuyên môn</label>
+                        <select id="role" class="form-select">
+                            <option value="Web App">Web App</option>
+                            <option value="Mobile App">Mobile App</option>
+                            <option value="UI/UX Design">UI/UX Design</option>
+                        </select>
+                    </div>
+                    <div class="form-group">
+                        <label class="form-label">Ngày gia nhập</label>
+                        <input type="date" id="joinDate" class="form-input" required>
+                    </div>
+                </div>
+
+                <div class="modal-footer">
+                    <label for="modal-toggle" class="btn-cancel" style="display: flex; justify-content: center; align-items: center; cursor: pointer;">
+                        Hủy
+                    </label>
+                    <button type="submit" class="btn-save-modal">Lưu thông tin</button>
+                </div>
+            </form>
+        </div>
+    </div>
+
+</body>
+</html>
