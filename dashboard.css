@@ -692,18 +692,18 @@ body:has(#modal-toggle:checked) {
 }
 
 .btn-cancel:hover { 
-    background: var(--slate-50); 
-    color: var(--slate-800); 
+    background: var(--slate-500); 
+    color: var(--slate-50); 
 }
 
 .btn-save-modal { 
-    background: var(--primary-dark); 
+    background: var(--gradient-primary); 
     border: none; color: white; 
     box-shadow: 0 4px 12px rgba(28, 78, 117, 0.2); 
 }
 
 .btn-save-modal:hover { 
-    background: var(--primary-dark); 
+    background: var(--primary-dark-2); 
     transform: translateY(-2px); 
     box-shadow: 0 6px 16px rgba(47, 160, 198, 0.3); 
 }  
