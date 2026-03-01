@@ -408,26 +408,33 @@ td {
 }
 
 .role-badge {
-    padding: 6px 16px;
-    border-radius: 12px;
-    font-size: 0.8rem;
+    display: inline-flex;
+    align-items: center;
+    padding: 6px 12px;
+    border-radius: 10px;
+    font-size: 0.75rem;
     font-weight: 700;
-    display: inline-block;
+    background: var(--slate-50);
+    color: var(--slate-500);
+    border: 1px solid var(--slate-200);
+}   
+
+.role-web { 
+    background: #EEF2FF; 
+    color: #466ee5; 
+    border-color: #E0E7FF; 
 }
 
-.role-web {
-    background: #EFF6FF;
-    color: #3B82F6;
-}
-
-.role-mobile {
+.role-mobile { 
     background: #ECFDF5; 
-    color: #10B981;
+    color: #059669; 
+    border-color: #D1FAE5; 
 }
 
-.role-design {
-    background: #f9efe3; 
-    color: #fda50e;
+.role-design { 
+    background: #FFF7ED; 
+    color: #EA580C; 
+    border-color: #FFEDD5; 
 }
 
 .date-text {
@@ -502,37 +509,6 @@ td {
     font-weight: 600; 
     margin-top: 2px; 
 }   
-
-.role-badge {
-    display: inline-flex;
-    align-items: center;
-    padding: 6px 12px;
-    border-radius: 10px;
-    font-size: 0.75rem;
-    font-weight: 700;
-    background: var(--slate-50);
-    color: var(--slate-500);
-    border: 1px solid var(--slate-200);
-}   
-
-.role-web { 
-    background: #EEF2FF; 
-    color: #4F46E5; 
-    border-color: #E0E7FF; 
-}
-
-.role-mobile { 
-    background: #ECFDF5; 
-    color: #059669; 
-    border-color: #D1FAE5; 
-}
-
-.role-design { 
-    background: #FFF7ED; 
-    color: #EA580C; 
-    border-color: #FFEDD5; 
-}
-
 
 .status-pill {
     display: inline-flex;
@@ -727,7 +703,7 @@ body:has(#modal-toggle:checked) {
 }
 
 .btn-save-modal:hover { 
-    background: var(--primary-blue); 
+    background: var(--primary-dark); 
     transform: translateY(-2px); 
     box-shadow: 0 6px 16px rgba(47, 160, 198, 0.3); 
 }  
