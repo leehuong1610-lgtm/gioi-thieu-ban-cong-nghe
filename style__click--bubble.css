@@ -1,0 +1,39 @@
+.full-landing-image {
+    width: 100%;
+    padding: 20px 80px;
+    display: flex;
+    flex-direction: column;
+    gap: 64px;
+    overflow-x: hidden;
+}
+
+.bubble{
+    position: fixed;
+    width: 80px;
+    height: 80px;
+    border-radius: 50%;
+    border: 1px solid rgba(146, 220, 255, 0.608);
+    background: radial-gradient(circle at 30% 30%,
+        rgba(255, 255, 255, 0.744),
+        rgba(228, 240, 255, 0.714),
+        rgba(184, 232, 255, 0.796),
+        rgba(148, 211, 250, 0.715)
+    );
+    pointer-events: none;
+    animation: bubble-float 4s ease-out forwards;
+    will-change: transform, opacity;
+}
+
+@keyframes bubble-float{
+
+    0%{
+        transform: translateY(0) scale(0.6);
+        opacity:0.9;
+    }
+
+    100%{
+        transform: translateY(-250px) scale(2);
+        opacity:0;
+    }
+
+}
