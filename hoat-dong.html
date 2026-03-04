@@ -8,6 +8,7 @@
         <link href="https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&family=Quicksand:wght@300..700&display=swap" rel="stylesheet">
     </head>
     <body>
+        <div class="full-landing-image">
         <header>
             <div class="header_logo">
                 <img src="image/logo.svg" alt="Logo">
@@ -17,7 +18,7 @@
             <nav class="header_nav">
                 <a class="header_nav_item" href="index.html">TRANG CHỦ</a>
                 <a class="header_nav_item" href="du-an-bo-loc.html">DỰ ÁN</a>
-                <a class="header_nav_item" href="hoat-dong.html">HOẠT ĐỘNG</a> 
+                <a class="default_nav header_nav_item" href="hoat-dong.html">HOẠT ĐỘNG</a> 
             </nav>
 
             <div class="header_cta-button">
@@ -210,20 +211,10 @@
             </div>
         </footer>
     
-        <!-- WATER FILTER -->
-    <svg style="display:none;">
-      <defs>
-        <filter id="water-filter">
-          <feTurbulence type="fractalNoise" baseFrequency="0.02" numOctaves="3" result="noise"/>
-          <feDisplacementMap in="SourceGraphic" in2="noise" scale="0"/>
-        </filter>
-      </defs>
-    </svg>
-
-    <div id="distortion-lens"></div>
-
-    <canvas id="waterSplash"></canvas>
+        </div>
     </body>
 
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery.ripples/0.5.3/jquery.ripples.min.js"></script>
     <script src="click.js"></script>
 </html>

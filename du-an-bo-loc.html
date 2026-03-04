@@ -9,6 +9,7 @@
         
     </head>
     <body>
+        <div class="full-landing-image">
         <input type="radio" name="filter" id="all" class="filter-input" checked>
         <input type="radio" name="filter" id="website" class="filter-input">
         <input type="radio" name="filter" id="mobile" class="filter-input">
@@ -23,7 +24,7 @@
 
             <div class="header_nav">
                 <a class="header_nav_item" href="index.html">TRANG CHỦ</a>
-                <a class="header_nav_item" href="du-an-bo-loc.html">DỰ ÁN</a>
+                <a class="default_nav header_nav_item" href="du-an-bo-loc.html">DỰ ÁN</a>
                 <a class="header_nav_item" href="hoat-dong.html">HOẠT ĐỘNG</a>
             </div>
 
@@ -222,20 +223,10 @@
             </div>
         </footer>
     
-        <!-- WATER FILTER -->
-    <svg style="display:none;">
-      <defs>
-        <filter id="water-filter">
-          <feTurbulence type="fractalNoise" baseFrequency="0.02" numOctaves="3" result="noise"/>
-          <feDisplacementMap in="SourceGraphic" in2="noise" scale="0"/>
-        </filter>
-      </defs>
-    </svg>
-
-    <div id="distortion-lens"></div>
-
-    <canvas id="waterSplash"></canvas>
+        </div>
     </body>
 
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery.ripples/0.5.3/jquery.ripples.min.js"></script>
     <script src="click.js"></script>
 </html>

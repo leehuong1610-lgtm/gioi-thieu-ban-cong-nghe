@@ -32,15 +32,24 @@
                 font-family: 'Quicksand', sans-serif;
             }
 
+            
             body {
-                background-color: var(--bg-body);
+                width: 100%;
+                background-color: #F0F9FF;
+            }
+            
+            /* Hieu ung click */
+            
+            .full-landing-image {
+                width: 100%;
                 padding: 20px 80px;
                 display: flex;
                 flex-direction: column;
                 gap: 64px;
                 overflow-x: hidden;
-                transition: padding 0.3s ease;
             }
+            
+            /* ket thuc */
 
             header {
                 position: sticky;
@@ -108,6 +117,10 @@
             }
 
             .header_nav_item:hover {
+                color: #2FA0C6;
+            }
+
+            .default_nav {
                 color: #2FA0C6;
             }
 

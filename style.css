@@ -35,13 +35,22 @@
 }
 
 body {
+    width: 100%;
     background-color: #F0F9FF;
+}
+
+/* Hieu ung click */
+
+.full-landing-image {
+    width: 100%;
     padding: 20px 80px;
     display: flex;
     flex-direction: column;
     gap: 64px;
     overflow-x: hidden;
 }
+
+/* ket thuc */
 
 header {
     position: sticky;
@@ -109,6 +118,10 @@ header {
 }
 
 .header_nav_item:hover {
+    color: #2FA0C6;
+}
+
+.default_nav {
     color: #2FA0C6;
 }
 
@@ -725,31 +738,6 @@ footer {
     text-transform: uppercase;
     z-index: 2;
 }
-
-/* Hieu ung click */
-#distortion-lens {
-    position: fixed;
-    top: 0;
-    left: 0;
-    width: 350px;
-    height: 350px;
-    border-radius: 50%;
-    pointer-events: none;
-    backdrop-filter: url(#water-filter);
-    -webkit-backdrop-filter: url(#water-filter);
-    transform: translate(-50%, -50%) scale(0);
-    opacity: 0;
-    z-index: 9999;
-}
-
-#waterSplash {
-    position: fixed;
-    top: 0;
-    left: 0;
-    pointer-events: none;
-    z-index: 9999;
-}
-/* ket thuc hieu ung */
 
 @media (max-width: 1200px) {
     .header_text { 

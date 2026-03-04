@@ -34,13 +34,24 @@
     font-family: 'Quicksand', sans-serif;
 }
 
+
 body {
+    width: 100%;
     background-color: #F0F9FF;
+}
+
+/* Hieu ung click */
+
+.full-landing-image {
+    width: 100%;
     padding: 20px 80px;
     display: flex;
     flex-direction: column;
+    gap: 64px;
     overflow-x: hidden;
 }
+
+/* ket thuc */
 
 header {
     position: sticky;
