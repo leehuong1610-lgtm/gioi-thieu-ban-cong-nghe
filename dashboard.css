@@ -30,6 +30,10 @@ body {
     overflow-x: hidden;
 }
 
+body:has(#modal-toggle:checked) {
+    overflow-x: hidden;
+}
+
 #sidebar {
     width: 17%;
     min-width: 210px;
@@ -595,8 +599,11 @@ td {
     pointer-events: auto;
 }
 
-body:has(#modal-toggle:checked) {
-    overflow: hidden;
+.style__flex {
+    display: flex; 
+    justify-content: center; 
+    align-items: center; 
+    cursor: pointer;
 }
 
 .modal-content {
