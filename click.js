@@ -1,27 +1,30 @@
 document.addEventListener("click", function(e){
 
-    for(let i = 0; i < 20; i++){
+    const bubbleCount = 3;
+
+    for(let i = 0; i < bubbleCount; i++){
 
         const bubble = document.createElement("span");
-        bubble.className = "bubble";
+        bubble.classList.add("bubble");
 
-        bubble.style.left = e.clientX + "px";
-        bubble.style.top = e.clientY + "px";
+        // vị trí random quanh điểm click
+        const offsetX = (Math.random() - 0.5) * 160;
+        const offsetY = (Math.random() - 0.5) * 160;
 
-        const size = Math.random()*12 + 6;
+        bubble.style.left = (e.clientX + offsetX) + "px";
+        bubble.style.top = (e.clientY + offsetY) + "px";
+
+        // size random
+        const size = Math.random() * 30 + 30;
         bubble.style.width = size + "px";
         bubble.style.height = size + "px";
-
-        const x = (Math.random()-0.5)*120;
-        const y = Math.random()*120;
-
-        bubble.style.transform = `translate(${x}px,-${y}px)`;
 
         document.body.appendChild(bubble);
 
         setTimeout(()=>{
             bubble.remove();
         },1200);
+
     }
 
 });
