@@ -1,0 +1,246 @@
+
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Quản lý Hoạt động - Ban Công Nghệ</title>
+    <link href="https://fonts.googleapis.com/css2?family=Quicksand:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+    <link rel="stylesheet" href="dashboard_act.css">
+</head>
+<body>
+    <input type="checkbox" id="modal-toggle" style="display: none;">
+
+    <aside id="sidebar">
+        <div class="sidebar-header">
+            <div class="logo-box"><img src="image/logo.svg" alt="Logo"></div>
+            <span class="sidebar-title">BCN PANEL</span>
+        </div>
+        <nav class="nav-list">
+            <div class="nav-label">Menu</div>
+            <a href="admin-dashboard.html" class="nav-item"><i class="fa-solid fa-chart-pie"></i><span>Tổng quan</span></a>
+            <a href="dashboard_bcn_mem-official.html" class="nav-item"><i class="fa-solid fa-users"></i><span>Thành viên</span></a>
+            <a href="dashboard_act.html" class="nav-item active"><i class="fa-solid fa-compass"></i><span>Hoạt động</span></a>
+            
+            <div class="nav-label">Cấu hình</div>
+            <a href="#" class="nav-item"><i class="fa-solid fa-gears"></i><span>Cài đặt chung</span></a>
+        </nav>
+        <button class="btn-logout"><i class="fa-solid fa-power-off"></i><span>Cập cảng</span></button>
+    </aside>
+
+    <div class="main">
+        <header class="header">
+            <div class="header-left">
+                <div class="search-container">
+                    <i class="fa-solid fa-magnifying-glass search-icon"></i>
+                    <input type="text" class="search-input" placeholder="Tìm kiếm...">
+                </div>
+            </div>
+            <div class="header-right">
+                <div class="user-profile">
+                    <div class="user-info">
+                        <p>Thuyền trưởng BCN</p>
+                    </div>
+                    <div class="avatar-box"><i class="fa-solid fa-crown"></i></div>
+                </div>
+            </div>
+        </header>
+
+        <div class="content-body">
+            <div class="stats-grid">
+                <div class="stat-card">
+                    <div class="stat-info"><p>Tổng hoạt động</p><h3>04</h3></div>
+                    <div class="stat-icon violet"><i class="fa-solid fa-map-location-dot"></i></div>
+                </div>
+                <div class="stat-card">
+                    <div class="stat-info"><p>Đang mở</p><h3>01</h3></div>
+                    <div class="stat-icon green"><i class="fa-solid fa-anchor"></i></div>
+                </div>
+                <div class="stat-card">
+                    <div class="stat-info"><p>Sắp diễn ra</p><h3>01</h3></div>
+                    <div class="stat-icon blue"><i class="fa-solid fa-hourglass-half"></i></div>
+                </div>
+                <div class="stat-card">
+                    <div class="stat-info"><p>Đã kết thúc</p><h3>02</h3></div>
+                    <div class="stat-icon orange"><i class="fa-solid fa-flag-checkered"></i></div>
+                </div>
+            </div>
+
+            <div class="section-card">
+                <div class="card-header">
+                    <div>
+                        <h2>Hải trình Hoạt động</h2>
+                        <p style="font-size: 0.8rem; color: var(--slate-500);">Điều hành và cập nhật các sự kiện của Ban Công Nghệ.</p>
+                    </div>
+                    <label for="modal-toggle" class="btn-primary">
+                        <i class="fa-solid fa-plus"></i><span>Tạo hoạt động mới</span>
+                    </label>
+                </div>
+
+                <div class="filter-bar">
+                    <select class="filter-select">
+                        <option>Tất cả chuyên mục</option>
+                        <option>Khám phá (Thiện nguyện)</option>
+                        <option>Sáng tạo (Nocode)</option>
+                        <option>Học thuật (Workshop)</option>
+                        <option>Teambuilding</option>
+                    </select>
+                    <select class="filter-select">
+                        <option>Tất cả trạng thái</option>
+                        <option>Đang mở đăng ký</option>
+                        <option>Dự kiến khởi hành</option>
+                        <option>Đã hoàn thành</option>
+                    </select>
+                    <button class="btn-filter-apply">
+                        <i class="fa-solid fa-filter"></i> Lọc kết quả
+                    </button>
+                </div>
+
+                <div class="table-scroll-container">
+                    <table>
+                        <thead>
+                            <tr>
+                                <th>Tên Hoạt động</th>
+                                <th>Người đăng ký</th>
+                                <th>Thời gian Sự kiện</th>
+                                <th>Trạng thái</th>
+                                <th>Thời gian Đăng ký</th>
+                                <th>Địa điểm</th>
+                                <th style="text-align: right;">Thao tác</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td class="tittle_activity">
+                                    <div class="activity-name">Chiến dịch Xuân Tình Nguyện 2026</div>
+                                    <div class="activity-category">Khám phá / Thiện nguyện</div>
+                                </td>
+                                <td><span class="date-range">25</span></td>
+                                <td><span class="date-range">02/02 - 15/02</span></td>
+                                <td><span class="status-badge status-open">Đang mở</span></td>
+                                <td>
+                                    <div class="date-range">
+                                    <span class="date-label">20/01 - 28-01</span>
+                                    <span class="date-remain blue-c">Còn 8 ngày</span>
+                                    </div>
+                                </td>
+                                <td><span class="date-range">Cần Giờ, TP.HCM</span></td>
+                                <td style="text-align: right;">
+                                    <div class="actions">
+                                        <button class="btn-icon"><i class="fa-regular fa-pen-to-square"></i></button>
+                                        <button class="btn-icon" style="color: #EF4444;"><i class="fa-solid fa-trash"></i></button>
+                                    </div>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td class="tittle_activity">
+                                    <div class="activity-name">Nocode Journey: Sáng tạo qua ống kính</div>
+                                    <div class="activity-category">Sáng tạo / Media</div>
+                                </td>
+                                <td><span class="date-range">39</span></td>
+                                <td><span class="date-range">12/03 - 25/03</span></td>
+                                <td><span class="status-badge status-pending">Bản nháp</span></td>
+                                <td>
+                                    <div class="date-range">
+                                    <span class="date-label">20/01 - 24-01</span>
+                                    <span class="date-remain orange-c">Còn 4 ngày</span>
+                                    </div>
+                                </td>
+                                <td><span class="date-range">Khuôn viên IUH</span></td>
+                                <td style="text-align: right;">
+                                    <div class="actions">
+                                        <button class="btn-icon"><i class="fa-regular fa-pen-to-square"></i></button>
+                                        <button class="btn-icon" style="color: #EF4444;"><i class="fa-solid fa-trash"></i></button>
+                                    </div>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td class="tittle_activity">
+                                    <div class="activity-name">Workshop: Học Lập trình C</div>
+                                    <div class="activity-category">Học thuật / Cơ bản</div>
+                                </td>
+                                <td><span class="date-range">34</span></td>
+                                <td><span class="date-range">10/01/2026</span></td>
+                                <td><span class="status-badge status-closed">Hoàn thành</span></td>
+                                <td><span class="date_range-red">Đã đóng</span></td>
+                                <td><span class="date-range">Online / Lab</span></td>
+                                <td style="text-align: right;">
+                                    <div class="actions">
+                                        <button class="btn-icon"><i class="fa-regular fa-pen-to-square"></i></button>
+                                        <button class="btn-icon" style="color: #EF4444;"><i class="fa-solid fa-trash"></i></button>
+                                    </div>
+                                </td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="modal-overlay">
+        <div class="modal-content">
+            <div class="modal-header-box">
+                <h3>Khởi hành Hoạt động</h3>
+                <label for="modal-toggle" class="close-modal-btn"><i class="fa-solid fa-xmark"></i></label>
+            </div>
+            
+            <form onsubmit="event.preventDefault(); document.getElementById('modal-toggle').checked = false;">
+                <div class="form-group">
+                    <label class="form-label">Tên hoạt động</label>
+                    <input type="text" class="form-input" placeholder="VD: Workshop Git Mastery" required>
+                </div>
+
+                <div class="form-grid">
+                    <div class="form-group">
+                        <label class="form-label">Chuyên mục</label>
+                        <select class="form-input">
+                            <option>Khám phá</option>
+                            <option>Sáng tạo</option>
+                            <option>Học thuật</option>
+                            <option>Teambuilding</option>
+                        </select>
+                    </div>
+                    <div class="form-group">
+                        <label class="form-label">Trạng thái hiện tại</label>
+                        <select class="form-input">
+                            <option>Đang mở đăng ký</option>
+                            <option>Dự kiến (Sắp tới)</option>
+                            <option>Đã hoàn thành</option>
+                        </select>
+                    </div>
+                </div>
+
+                <div class="form-grid">
+                    <div class="form-group">
+                        <label class="form-label">Thời hạn Đăng ký (Từ - Đến)</label>
+                        <input type="text" class="form-input" placeholder="VD: 20/01 - 30/01">
+                    </div>
+                    <div class="form-group">
+                        <label class="form-label">Thời gian diễn ra Sự kiện</label>
+                        <input type="text" class="form-input" placeholder="VD: 02/02 - 15/02">
+                    </div>
+                </div>
+
+                <div class="form-group">
+                    <label class="form-label">Địa điểm tổ chức</label>
+                    <input type="text" class="form-input" placeholder="VD: Huyện Cần Giờ / Phòng Lab H5.2">
+                </div>
+
+                <div class="form-group">
+                    <label class="form-label">Mô tả chi tiết hoạt động</label>
+                    <textarea class="form-input" placeholder="Nhập nội dung mô tả sẽ hiển thị cho thành viên xem..."></textarea>
+                </div>
+
+                <div class="modal-footer">
+                    <label for="modal-toggle" class="btn-cancel-modal">Hủy bỏ</label>
+                    <button type="submit" class="btn-save-modal">Lưu thông tin hải trình</button>
+                </div>
+            </form>
+        </div>
+    </div>
+
+    <div class="lighthouse-beam"></div>
+</body>
+</html>
