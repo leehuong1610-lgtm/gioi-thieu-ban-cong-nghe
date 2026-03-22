@@ -284,6 +284,17 @@
                 background-image: none;
             }
 
+            .btn-detail {
+                color: rgb(13, 98, 163);
+                font-weight: 700;
+                margin-top: -15px;
+                text-decoration: none;
+            }
+            .btn-detail:hover {
+              text-decoration: underline;
+              opacity: 0.8;
+            }
+
             .btn-outline:hover { 
                 background-color: var(--primary-blue); 
                 color: white; 
