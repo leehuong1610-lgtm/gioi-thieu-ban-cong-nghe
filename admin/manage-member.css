@@ -57,10 +57,11 @@ body {
 }
 
 .logo-box img {
-    height: 40px;
-    margin-right: 12px;
-    filter: drop-shadow(0 0 8px rgba(47, 160, 198, 0.3));
-}
+        height: 40px;
+        margin-right: 12px;
+        filter: drop-shadow(0 0 8px rgba(47, 160, 198, 0.3));
+        flex-shrink: 0;
+    }
 
 .sidebar-title {
     font-weight: 800;
