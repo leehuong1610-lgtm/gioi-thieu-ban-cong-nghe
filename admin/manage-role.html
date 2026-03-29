@@ -1,0 +1,98 @@
+
+
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Admin Dashboard - Ban Công Nghệ</title>
+    <link href="https://fonts.googleapis.com/css2?family=Quicksand:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+    <link rel="stylesheet" href="manage-role.css">
+</head>
+<body>
+    <input type="checkbox" id="modal-toggle" style="display: none;">
+
+    <aside id="sidebar">
+        <div class="sidebar-header">
+            <div class="logo-box"><img src="/gioi-thieu-ban-cong-nghe/image/logo.svg" alt="Logo"></div>
+            <span class="sidebar-title">BCN PANEL</span>
+        </div>
+        <nav class="nav-list">
+            <div class="nav-label">Menu</div>
+            <a href="#" class="nav-item"><i class="fa-solid fa-chart-pie"></i><span>Tổng quan</span></a>
+            <a href="manage-member.html" class="nav-item active"><i class="fa-solid fa-user"></i><span>Quản lý người dùng</span></a>
+            <a href="manage-group.html" class="nav-item"><i class="fa-solid fa-users"></i><span>Quản lý nhóm</span></a>
+            <a href="manage-role.html" class="nav-item"><i class="fa-solid fa-user-gear"></i><span>Quản lý vai trò</span></a>
+            <a href="notification.html" class="nav-item"><i class="fa-solid fa-compass"></i><span>Thông báo</span></a>
+        </nav>
+        <button class="btn-logout"><i class="fa-solid fa-power-off"></i><span>Cập cảng</span></button>
+    </aside>
+
+    <div class="main">
+        <header class="header">
+            <div class="search-container">
+                <i class="fa-solid fa-magnifying-glass search-icon"></i>
+                <input type="text" class="search-input" placeholder="Tìm kiếm...">
+            </div>
+            <div class="header-right">
+                <div class="user-profile">
+                    <div class="user-info" style="text-align: right;"><p style="font-weight: 800; font-size: 0.9rem; color: var(--primary-dark);">Thuyền trưởng</p></div>
+                    <div class="avatar-box"><i class="fa-solid fa-crown"></i></div>
+                </div>
+            </div>
+        </header>
+
+        <div class="content-body">
+
+
+            <div class="section-card">
+                <div class="card-header">
+                    
+                </div>
+
+                <div class="table-scroll-container">
+                    
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="modal-overlay">
+        <div class="modal-content">
+            <div class="modal-header-box">
+                <h3>Hồ sơ thành viên</h3>
+                <label for="modal-toggle" class="close-modal-btn"><i class="fa-solid fa-xmark"></i></label>
+            </div>
+            
+            <form onsubmit="event.preventDefault(); document.getElementById('modal-toggle').checked = false;">
+                <div class="form-grid">
+                    <div class="form-group"><label class="form-label">Họ và tên</label><input type="text" class="form-input" placeholder="VD: Nguyễn Hải Nam" required></div>
+                    <div class="form-group"><label class="form-label">ID Discord</label><input type="text" class="form-input" placeholder="VD: name#1234" required></div>
+                </div>
+                <div class="form-grid">
+                    <div class="form-group"><label class="form-label">Mã số sinh viên</label><input type="text" class="form-input" placeholder="VD: 22687121" required></div>
+                    <div class="form-group">
+                        <label class="form-label">Chuyên môn</label>
+                        <select class="form-input" style="cursor: pointer;">
+                            <option>Web App</option>
+                            <option>Mobile App</option>
+                            <option>UI/UX Design</option>
+                        </select>
+                    </div>
+                </div>
+                <div class="form-grid">
+                    <div class="form-group"><label class="form-label">Ngày sinh</label><input type="date" class="form-input" required></div>
+                    <div class="form-group"><label class="form-label">Ngày gia nhập</label><input type="date" class="form-input" required></div>
+                </div>
+                <div class="modal-footer">
+                    <label for="modal-toggle" class="btn-cancel-modal">Hủy bỏ</label>
+                    <button type="submit" class="btn-save-modal">Kích hoạt hồ sơ</button>
+                </div>
+            </form>
+        </div>
+    </div>
+
+    <div class="lighthouse-beam"></div>
+</body>
+</html>
