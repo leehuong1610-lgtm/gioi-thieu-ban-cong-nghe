@@ -1,104 +1,436 @@
-
-
-<!DOCTYPE html>
+<!doctype html>
 <html lang="vi">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Admin Dashboard - Ban Công Nghệ</title>
-    <link href="https://fonts.googleapis.com/css2?family=Quicksand:wght@400;500;600;700&display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
-    <link rel="stylesheet" href="manage-role.css">
-</head>
-<body>
-    <input type="checkbox" id="modal-toggle" style="display: none;">
+    <link
+      href="https://fonts.googleapis.com/css2?family=Quicksand:wght@400;500;600;700&display=swap"
+      rel="stylesheet"
+    />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css"
+    />
+    <link rel="stylesheet" href="manage-role.css" />
+  </head>
+  <body>
+    <input type="checkbox" id="sidebar-ctrl" class="logic-ctrl" />
+
+    <input type="checkbox" id="member-modal-ctrl" class="logic-ctrl" />
+    <input type="checkbox" id="role-manager-ctrl" class="logic-ctrl" />
 
     <aside id="sidebar">
-        <div class="sidebar-header">
-            <div class="logo-box"><img src="image/logo.svg" alt="Logo"></div>
-            <span class="sidebar-title">BCN PANEL</span>
-        </div>
-        <nav class="nav-list">
-            <div class="nav-label">Menu</div>
-            <a href="over-view.html" class="nav-item"><i class="fa-solid fa-chart-pie"></i><span>Tổng quan</span></a>
-            <a href="index.html" class="nav-item"><i class="fa-solid fa-user"></i><span>Quản lý người dùng</span></a>
-            <a href="manage-group.html" class="nav-item"><i class="fa-solid fa-users"></i><span>Quản lý nhóm</span></a>
-            <a href="manage-role.html" class="nav-item active"><i class="fa-solid fa-user-gear"></i><span>Quản lý vai trò</span></a>
-            <a href="notification.html" class="nav-item"><i class="fa-solid fa-compass"></i><span>Thông báo</span></a>
-        </nav>
-        <button class="btn-logout"><i class="fa-solid fa-power-off"></i><span>Cập cảng</span></button>
+      <div class="sidebar-header">
+        <div class="logo-box"><img src="image/logo.svg" alt="Logo" /></div>
+        <span class="sidebar-title">BCN PANEL</span>
+      </div>
+      <nav class="nav-list">
+        <div class="nav-label">Menu</div>
+        <a href="over-view.html" class="nav-item"
+          ><i class="fa-solid fa-chart-pie"></i><span>Tổng quan</span></a
+        >
+        <a href="index.html" class="nav-item"
+          ><i class="fa-solid fa-user"></i><span>Quản lý người dùng</span></a
+        >
+        <a href="manage-group.html" class="nav-item"
+          ><i class="fa-solid fa-users"></i><span>Quản lý nhóm</span></a
+        >
+        <a href="manage-role.html" class="nav-item active"
+          ><i class="fa-solid fa-user-gear"></i><span>Quản lý vai trò</span></a
+        >
+        <a href="notification.html" class="nav-item"
+          ><i class="fa-solid fa-compass"></i><span>Thông báo</span></a
+        >
+      </nav>
+      <button class="btn-logout">
+        <i class="fa-solid fa-power-off"></i><span>Cập cảng</span>
+      </button>
     </aside>
 
+    <!-- NỘI DUNG CHÍNH (MAIN) -->
     <div class="main">
-        <header class="header">
-            <div class="search-container">
-                <i class="fa-solid fa-magnifying-glass search-icon"></i>
-                <input type="text" class="search-input" placeholder="Tìm kiếm...">
-            </div>
-            <div class="header-right">
-                <div class="user-profile">
-                    <div class="user-info" style="text-align: right;"><p style="font-weight: 800; font-size: 0.9rem; color: var(--primary-dark);">Thuyền trưởng</p></div>
-                    <div class="avatar-box"><i class="fa-solid fa-crown"></i></div>
-                </div>
-            </div>
-        </header>
-
-        <div class="content-body">
-
-
-            <div class="section-card">
-                <div class="card-header">
-                    <div>
-                        <h2>Thủy thủ đoàn nòng cốt</h2>
-                        <p style="font-size: 0.8rem; color: var(--slate-500); margin-top: 4px;">Danh sách cấp bậc các nhân sự hiện tại của Ban Công Nghệ.</p>
-                    </div>
-                    <label for="modal-toggle" class="btn-primary">
-                        <i class="fa-solid fa-plus"></i><span>Thêm role cho thành viên</span>
-                    </label>
-                </div>
-
-                <div class="table-scroll-container">
-                    
-                </div>
-            </div>
+      <header class="header">
+        <div class="search-container">
+          <i class="fa-solid fa-magnifying-glass search-icon"></i>
+          <input
+            type="text"
+            class="search-input"
+            placeholder="Tìm kiếm..."
+          />
         </div>
+
+        <div class="header-right">
+          <div class="user-profile">
+            <div
+              class="user-info"
+              style="text-align: right; margin-right: 12px"
+            >
+              <p
+                style="
+                  font-weight: 800;
+                  font-size: 0.9rem;
+                  color: var(--primary-dark);
+                "
+              >
+                Thuyền trưởng
+              </p>
+            </div>
+            <div class="avatar-box">
+              <i class="fa-solid fa-crown"></i>
+            </div>
+          </div>
+        </div>
+      </header>
+
+      <div class="content-body">
+        <div class="section-card">
+          <div class="card-header">
+            <div>
+              <h2 style="color: var(--primary-dark)">
+                Cấp quyền thủy thủ đoàn
+              </h2>
+              <p
+                style="
+                  font-size: 0.8rem;
+                  color: var(--slate-400);
+                  margin-top: 4px;
+                  font-weight: 600;
+                "
+              >
+                Danh sách cấp bậc các nhân sự hiện tại của Ban Công Nghệ.
+              </p>
+            </div>
+            <div style="display: flex; gap: 12px">
+              <label
+                for="role-manager-ctrl"
+                class="btn-secondary"
+                style="cursor: pointer"
+              >
+                <i class="fa-solid fa-sliders"></i>
+                <span>Quản lý Role</span>
+              </label>
+              <label
+                for="member-modal-ctrl"
+                class="btn-primary"
+                style="cursor: pointer"
+              >
+                <i class="fa-solid fa-user-plus"></i>
+                <span>Thêm role cho thành viên</span>
+              </label>
+            </div>
+          </div>
+
+          <div class="table-container">
+            <table>
+              <thead>
+                <tr>
+                  <th>Thành viên</th>
+                  <th>MSSV</th>
+                  <th>Vai trò (Roles)</th>
+                  <th style="text-align: right">Thao tác</th>
+                </tr>
+              </thead>
+              <tbody>
+                <!-- Dữ liệu mẫu 1 -->
+                <tr>
+                  <td>
+                    <div class="member-profile-cell">
+                        <div class="member-avatar">TA</div>
+                            <div class="member-info-text">
+                                <span class="member-name">Trần Thị A</span>
+                                <span class="member-discord"><i class="fa-brands fa-discord"></i> tranthia_bcn#1234</span>
+                            </div>
+                        </div>
+                  </td>
+                  <td>
+                    <span
+                      style="
+                        font-size: 0.85rem;
+                        color: var(--primary-blue);
+                        font-weight: 800;
+                      "
+                      >21004521</span
+                    >
+                  </td>
+                  <td>
+                    <div class="role-container">
+                      <div class="role-tag">
+                        <div class="role-dot" style="background: #ff4654"></div>
+                        Admin
+                      </div>
+                      <div class="role-tag">
+                        <div class="role-dot" style="background: #3498db"></div>
+                        Web Dev
+                      </div>
+                    </div>
+                  </td>
+                  <td class="actions">
+                    <label for="member-modal-ctrl" class="btn-icon"
+                      ><i class="fa-regular fa-pen-to-square"></i
+                    ></label>
+                    <button
+                      class="btn-icon"
+                      style="background: none; border: none; cursor: pointer"
+                    >
+                      <i
+                        class="fa-solid fa-trash-can"
+                        style="color: var(--danger)"
+                      ></i>
+                    </button>
+                  </td>
+                </tr>
+                <tr>
+                  <td>
+                    <div class="member-profile-cell">
+                        <div class="member-avatar">TA</div>
+                            <div class="member-info-text">
+                                <span class="member-name">Trần Thị A</span>
+                                <span class="member-discord"><i class="fa-brands fa-discord"></i> tranthia_bcn#1234</span>
+                            </div>
+                        </div>
+                  </td>
+                  <td>
+                    <span
+                      style="
+                        font-size: 0.85rem;
+                        color: var(--primary-blue);
+                        font-weight: 800;
+                      "
+                      >22687121</span
+                    >
+                  </td>
+                  <td>
+                    <div class="role-container">
+                      <div class="role-tag">
+                        <div class="role-dot" style="background: #faa61a"></div>
+                        Leader
+                      </div>
+                      <div class="role-tag">
+                        <div class="role-dot" style="background: #2ecc71"></div>
+                        Mobile Dev
+                      </div>
+                    </div>
+                  </td>
+                  <td class="actions">
+                    <label for="member-modal-ctrl" class="btn-icon"
+                      ><i class="fa-regular fa-pen-to-square"></i
+                    ></label>
+                    <button
+                      class="btn-icon"
+                      style="background: none; border: none; cursor: pointer"
+                    >
+                      <i
+                        class="fa-solid fa-trash-can"
+                        style="color: var(--danger)"
+                      ></i>
+                    </button>
+                  </td>
+                </tr>
+              </tbody>
+            </table>
+          </div>
+        </div>
+      </div>
     </div>
 
-    <div class="modal-overlay">
-        <div class="modal-content">
-            <div class="modal-header-box">
-                <h3>Hồ sơ thành viên</h3>
-                <label for="modal-toggle" class="close-modal-btn"><i class="fa-solid fa-xmark"></i></label>
-            </div>
-            
-            <form onsubmit="event.preventDefault(); document.getElementById('modal-toggle').checked = false;">
-                <div class="form-grid">
-                    <div class="form-group"><label class="form-label">Họ và tên</label><input type="text" class="form-input" placeholder="VD: Nguyễn Hải Nam" required></div>
-                    <div class="form-group"><label class="form-label">ID Discord</label><input type="text" class="form-input" placeholder="VD: name#1234" required></div>
-                </div>
-                <div class="form-grid">
-                    <div class="form-group"><label class="form-label">Mã số sinh viên</label><input type="text" class="form-input" placeholder="VD: 22687121" required></div>
-                    <div class="form-group">
-                        <label class="form-label">Chuyên môn</label>
-                        <select class="form-input" style="cursor: pointer;">
-                            <option>Web App</option>
-                            <option>Mobile App</option>
-                            <option>UI/UX Design</option>
-                        </select>
-                    </div>
-                </div>
-                <div class="form-grid">
-                    <div class="form-group"><label class="form-label">Ngày sinh</label><input type="date" class="form-input" required></div>
-                    <div class="form-group"><label class="form-label">Ngày gia nhập</label><input type="date" class="form-input" required></div>
-                </div>
-                <div class="modal-footer">
-                    <label for="modal-toggle" class="btn-cancel-modal">Hủy bỏ</label>
-                    <button type="submit" class="btn-save-modal">Kích hoạt hồ sơ</button>
-                </div>
-            </form>
+    <!-- MODAL: CẤP QUYỀN NHÂN SỰ -->
+    <div class="modal-overlay" id="member-modal">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h3>Cấp quyền nhân sự</h3>
+          <label for="member-modal-ctrl" class="close-btn">
+            <i class="fa-solid fa-xmark"></i>
+          </label>
         </div>
+
+        <form action="#">
+          <div class="form-row">
+            <div class="form-group">
+              <label class="form-label">Tên thành viên</label>
+              <input
+                type="text"
+                class="form-input"
+                placeholder="VD: Trần Thế Tường"
+              />
+            </div>
+            <div class="form-group">
+              <label class="form-label">Mã số sinh viên (MSSV)</label>
+              <input
+                type="text"
+                class="form-input"
+                placeholder="VD: 21004521"
+              />
+            </div>
+          </div>
+
+          <div class="form-group">
+            <label class="form-label">Gán Roles (Nhấn để tích chọn)</label>
+            <div class="role-selector-modal">
+              <label class="modal-role-item">
+                <input type="checkbox" />
+                <span>Admin</span>
+                <div class="dot"><i class="fa-solid fa-check"></i></div>
+              </label>
+              <label class="modal-role-item">
+                <input type="checkbox" />
+                <span>Mentor</span>
+                <div class="dot"><i class="fa-solid fa-check"></i></div>
+              </label>
+              <label class="modal-role-item">
+                <input type="checkbox" />
+                <span>Web Dev</span>
+                <div class="dot"><i class="fa-solid fa-check"></i></div>
+              </label>
+              <label class="modal-role-item">
+                <input type="checkbox" />
+                <span>Mobile Dev</span>
+                <div class="dot"><i class="fa-solid fa-check"></i></div>
+              </label>
+            </div>
+          </div>
+
+          <div class="modal-footer">
+            <label
+              for="member-modal-ctrl"
+              class="btn-modal-save"
+              style="
+                background: #eee;
+                color: #666;
+                box-shadow: none;
+                cursor: pointer;
+              "
+            >
+              Hủy bỏ
+            </label>
+            <button type="submit" class="btn-modal-save">
+              Cập nhật Hải trình
+            </button>
+          </div>
+        </form>
+      </div>
     </div>
 
-    <div class="lighthouse-beam"></div>
-</body>
+    <!-- MODAL: CẤU HÌNH VAI TRÒ -->
+    <div class="modal-overlay" id="role-manager-modal">
+      <div class="modal-content" style="max-width: 450px">
+        <div class="modal-header">
+          <h3>Cấu hình vai trò</h3>
+          <label for="role-manager-ctrl" class="close-btn">
+            <i class="fa-solid fa-xmark"></i>
+          </label>
+        </div>
+
+        <div style="margin-bottom: 24px">
+          <div
+            style="
+              display: flex;
+              justify-content: space-between;
+              align-items: center;
+              padding: 12px;
+              background: #f8fafc;
+              border-radius: 14px;
+              margin-bottom: 8px;
+            "
+          >
+            <div style="display: flex; align-items: center; gap: 10px">
+              <div
+                style="
+                  width: 12px;
+                  height: 12px;
+                  border-radius: 50%;
+                  background: #ff4654;
+                "
+              ></div>
+              <span style="font-weight: 700">Admin</span>
+            </div>
+            <button
+              class="btn-icon"
+              style="
+                background: none;
+                border: none;
+                cursor: pointer;
+                padding: 5px;
+              "
+            >
+              <i class="fa-solid fa-xmark"></i>
+            </button>
+          </div>
+          <div
+            style="
+              display: flex;
+              justify-content: space-between;
+              align-items: center;
+              padding: 12px;
+              background: #f8fafc;
+              border-radius: 14px;
+              margin-bottom: 8px;
+            "
+          >
+            <div style="display: flex; align-items: center; gap: 10px">
+              <div
+                style="
+                  width: 12px;
+                  height: 12px;
+                  border-radius: 50%;
+                  background: #3498db;
+                "
+              ></div>
+              <span style="font-weight: 700">Web Dev</span>
+            </div>
+            <button
+              class="btn-icon"
+              style="
+                background: none;
+                border: none;
+                cursor: pointer;
+                padding: 5px;
+              "
+            >
+              <i class="fa-solid fa-xmark"></i>
+            </button>
+          </div>
+        </div>
+
+        <div style="border-top: 1px solid var(--slate-100); padding-top: 20px">
+          <p class="form-label">Tạo Role mới</p>
+          <div style="display: flex; gap: 10px; margin-top: 10px">
+            <input
+              type="text"
+              class="form-input"
+              style="flex: 1"
+              placeholder="Tên Role..."
+            />
+            <input
+              type="color"
+              value="#3498db"
+              style="
+                width: 50px;
+                height: 50px;
+                border-radius: 12px;
+                border: 1px solid var(--slate-200);
+                padding: 4px;
+                cursor: pointer;
+              "
+            />
+
+            <!-- Nút dấu + kiêm chức năng thoát Modal (out ra) -->
+            <label
+              for="role-manager-ctrl"
+              class="btn-primary"
+              style="
+                padding: 0 20px;
+                display: flex;
+                align-items: center;
+                justify-content: center;
+                cursor: pointer;
+              "
+            >
+              <i class="fa-solid fa-plus"></i>
+            </label>
+          </div>
+        </div>
+      </div>
+    </div>
+  </body>
 </html>
