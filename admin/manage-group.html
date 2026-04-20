@@ -1,98 +1,360 @@
-
-
-<!DOCTYPE html>
+<!doctype html>
 <html lang="vi">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Admin Dashboard - Ban Công Nghệ</title>
-    <link href="https://fonts.googleapis.com/css2?family=Quicksand:wght@400;500;600;700&display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
-    <link rel="stylesheet" href="manage-group.css">
-</head>
-<body>
-    <input type="checkbox" id="modal-toggle" style="display: none;">
+    <link
+      href="https://fonts.googleapis.com/css2?family=Quicksand:wght@400;500;600;700&display=swap"
+      rel="stylesheet"
+    />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css"
+    />
+    <link rel="stylesheet" href="manage-group.css" />
+  </head>
+  <body>
+    <input type="checkbox" id="modal-toggle" style="display: none" />
 
     <aside id="sidebar">
-        <div class="sidebar-header">
-            <div class="logo-box"><img src="image/logo.svg" alt="Logo"></div>
-            <span class="sidebar-title">BCN PANEL</span>
-        </div>
-        <nav class="nav-list">
-            <div class="nav-label">Menu</div>
-            <a href="over-view.html" class="nav-item"><i class="fa-solid fa-chart-pie"></i><span>Tổng quan</span></a>
-            <a href="index.html" class="nav-item"><i class="fa-solid fa-user"></i><span>Quản lý người dùng</span></a>
-            <a href="manage-group.html" class="nav-item active"><i class="fa-solid fa-users"></i><span>Quản lý nhóm</span></a>
-            <a href="manage-role.html" class="nav-item"><i class="fa-solid fa-user-gear"></i><span>Quản lý vai trò</span></a>
-            <a href="notification.html" class="nav-item"><i class="fa-solid fa-compass"></i><span>Thông báo</span></a>
-        </nav>
-        <button class="btn-logout"><i class="fa-solid fa-power-off"></i><span>Cập cảng</span></button>
+      <div class="sidebar-header">
+        <div class="logo-box"><img src="image/logo.svg" alt="Logo" /></div>
+        <span class="sidebar-title">BCN PANEL</span>
+      </div>
+      <nav class="nav-list">
+        <div class="nav-label">Menu</div>
+        <a href="over-view.html" class="nav-item"
+          ><i class="fa-solid fa-chart-pie"></i><span>Tổng quan</span></a
+        >
+        <a href="index.html" class="nav-item"
+          ><i class="fa-solid fa-user"></i><span>Quản lý người dùng</span></a
+        >
+        <a href="manage-group.html" class="nav-item active"
+          ><i class="fa-solid fa-users"></i><span>Quản lý nhóm</span></a
+        >
+        <a href="manage-role.html" class="nav-item"
+          ><i class="fa-solid fa-user-gear"></i><span>Quản lý vai trò</span></a
+        >
+        <a href="notification.html" class="nav-item"
+          ><i class="fa-solid fa-compass"></i><span>Thông báo</span></a
+        >
+      </nav>
+      <button class="btn-logout">
+        <i class="fa-solid fa-power-off"></i><span>Cập cảng</span>
+      </button>
     </aside>
 
     <div class="main">
-        <header class="header">
-            <div class="search-container">
-                <i class="fa-solid fa-magnifying-glass search-icon"></i>
-                <input type="text" class="search-input" placeholder="Tìm kiếm...">
-            </div>
-            <div class="header-right">
-                <div class="user-profile">
-                    <div class="user-info" style="text-align: right;"><p style="font-weight: 800; font-size: 0.9rem; color: var(--primary-dark);">Thuyền trưởng</p></div>
-                    <div class="avatar-box"><i class="fa-solid fa-crown"></i></div>
-                </div>
-            </div>
-        </header>
-
-        <div class="content-body">
-
-
-            <div class="section-card">
-                <div class="card-header">
-                    
-                </div>
-
-                <div class="table-scroll-container">
-                    
-                </div>
-            </div>
+      <header class="header">
+        <div class="search-container">
+          <i class="fa-solid fa-magnifying-glass search-icon"></i>
+          <input type="text" class="search-input" placeholder="Tìm kiếm..." />
         </div>
-    </div>
 
-    <div class="modal-overlay">
-        <div class="modal-content">
-            <div class="modal-header-box">
-                <h3>Hồ sơ thành viên</h3>
-                <label for="modal-toggle" class="close-modal-btn"><i class="fa-solid fa-xmark"></i></label>
+        <div class="header-right">
+          <div class="user-profile">
+            <div
+              class="user-info"
+              style="text-align: right; margin-right: 12px"
+            >
+              <p
+                style="
+                  font-weight: 800;
+                  font-size: 0.9rem;
+                  color: var(--primary-dark);
+                "
+              >
+                Thuyền trưởng
+              </p>
             </div>
-            
-            <form onsubmit="event.preventDefault(); document.getElementById('modal-toggle').checked = false;">
-                <div class="form-grid">
-                    <div class="form-group"><label class="form-label">Họ và tên</label><input type="text" class="form-input" placeholder="VD: Nguyễn Hải Nam" required></div>
-                    <div class="form-group"><label class="form-label">ID Discord</label><input type="text" class="form-input" placeholder="VD: name#1234" required></div>
-                </div>
-                <div class="form-grid">
-                    <div class="form-group"><label class="form-label">Mã số sinh viên</label><input type="text" class="form-input" placeholder="VD: 22687121" required></div>
-                    <div class="form-group">
-                        <label class="form-label">Chuyên môn</label>
-                        <select class="form-input" style="cursor: pointer;">
-                            <option>Web App</option>
-                            <option>Mobile App</option>
-                            <option>UI/UX Design</option>
-                        </select>
+            <div class="avatar-box">
+              <i class="fa-solid fa-crown"></i>
+            </div>
+          </div>
+        </div>
+      </header>
+
+      <div class="content-body">
+        <input type="checkbox" id="view1" hidden />
+        <input type="checkbox" id="modal-toggle" hidden />
+
+        <div class="section-card">
+          <div class="card-header">
+            <div>
+              <h2 style="color: var(--primary-dark)">
+                Phân nhóm thủy thủ đoàn
+              </h2>
+
+              <p
+                style="
+                  font-size: 0.8rem;
+                  color: var(--slate-400);
+                  margin-top: 4px;
+                  font-weight: 600;
+                "
+              >
+                Quản lý danh sách các nhóm đang hoạt động của Ban Công Nghệ.
+              </p>
+            </div>
+
+            <div style="display: flex; gap: 12px">
+              <label
+                for="role-manager-ctrl"
+                class="btn-primary"
+                style="cursor: pointer"
+              >
+                <i class="fa-solid fa-plus"></i>
+                <span>Thêm nhóm mới</span>
+              </label>
+            </div>
+          </div>
+
+          <div class="table-container">
+            <table>
+              <thead>
+                <tr>
+                  <th>Mã nhóm</th>
+                  <th>Tên nhóm</th>
+                  <th>Tổng thành viên</th>
+                  <th>Trưởng nhóm</th>
+                  <th style="text-align: right">Thao tác</th>
+                </tr>
+              </thead>
+
+              <tbody>
+                <tr>
+                  <td><span class="style-text-content">22716AF</span></td>
+
+                  <td>
+                    <div class="role-container">
+                      <div class="role-tag gr1">Web BCN</div>
                     </div>
-                </div>
-                <div class="form-grid">
-                    <div class="form-group"><label class="form-label">Ngày sinh</label><input type="date" class="form-input" required></div>
-                    <div class="form-group"><label class="form-label">Ngày gia nhập</label><input type="date" class="form-input" required></div>
-                </div>
-                <div class="modal-footer">
-                    <label for="modal-toggle" class="btn-cancel-modal">Hủy bỏ</label>
-                    <button type="submit" class="btn-save-modal">Kích hoạt hồ sơ</button>
-                </div>
-            </form>
+                  </td>
+
+                  <td class="style-text-content">8 thành viên</td>
+                  <td class="style-text-content">Hà Thị R</td>
+
+                  <td class="actions">
+                    <label for="view1" class="btn-icon">
+                      <i class="fa-solid fa-eye"></i>
+                    </label>
+
+                    <label for="modal-toggle" class="btn-icon">
+                      <i class="fa-regular fa-pen-to-square"></i>
+                    </label>
+
+                    <button class="btn-icon">
+                      <i
+                        class="fa-solid fa-trash-can"
+                        style="color: var(--danger)"
+                      ></i>
+                    </button>
+                  </td>
+                </tr>
+
+                <tr>
+                  <td><span class="style-text-content">22744MA</span></td>
+
+                  <td>
+                    <div class="role-container">
+                      <div class="role-tag gr4">Mobile App</div>
+                    </div>
+                  </td>
+
+                  <td class="style-text-content">4 thành viên</td>
+                  <td class="style-text-content">Trần Thị A</td>
+
+                  <td class="actions">
+                    <label for="view1" class="btn-icon">
+                      <i class="fa-solid fa-eye"></i>
+                    </label>
+
+                    <label for="modal-toggle" class="btn-icon">
+                      <i class="fa-regular fa-pen-to-square"></i>
+                    </label>
+
+                    <button class="btn-icon">
+                      <i
+                        class="fa-solid fa-trash-can"
+                        style="color: var(--danger)"
+                      ></i>
+                    </button>
+                  </td>
+                </tr>
+
+                <tr>
+                  <td><span class="style-text-content">29416US</span></td>
+
+                  <td>
+                    <div class="role-container">
+                      <div class="role-tag gr2">Uside</div>
+                    </div>
+                  </td>
+
+                  <td class="style-text-content">7 thành viên</td>
+                  <td class="style-text-content">Trần Văn D</td>
+
+                  <td class="actions">
+                    <label for="view1" class="btn-icon">
+                      <i class="fa-solid fa-eye"></i>
+                    </label>
+
+                    <label for="modal-toggle" class="btn-icon">
+                      <i class="fa-regular fa-pen-to-square"></i>
+                    </label>
+
+                    <button class="btn-icon">
+                      <i
+                        class="fa-solid fa-trash-can"
+                        style="color: var(--danger)"
+                      ></i>
+                    </button>
+                  </td>
+                </tr>
+
+                <tr>
+                  <td><span class="style-text-content">29416TT</span></td>
+
+                  <td>
+                    <div class="role-container">
+                      <div class="role-tag gr5">Thực tập sinh Uside</div>
+                    </div>
+                  </td>
+
+                  <td class="style-text-content">7 thành viên</td>
+                  <td class="style-text-content">Trần Văn D</td>
+
+                  <td class="actions">
+                    <label for="view1" class="btn-icon">
+                      <i class="fa-solid fa-eye"></i>
+                    </label>
+
+                    <label for="modal-toggle" class="btn-icon">
+                      <i class="fa-regular fa-pen-to-square"></i>
+                    </label>
+
+                    <button class="btn-icon">
+                      <i
+                        class="fa-solid fa-trash-can"
+                        style="color: var(--danger)"
+                      ></i>
+                    </button>
+                  </td>
+                </tr>
+
+                <tr>
+                  <td><span class="style-text-content">29416CT</span></td>
+
+                  <td>
+                    <div class="role-container">
+                      <div class="role-tag gr3">Cộng tác viên BCN</div>
+                    </div>
+                  </td>
+
+                  <td class="style-text-content">7 thành viên</td>
+                  <td class="style-text-content">Trần Văn D</td>
+
+                  <td class="actions">
+                    <label for="view1" class="btn-icon">
+                      <i class="fa-solid fa-eye"></i>
+                    </label>
+
+                    <label for="modal-toggle" class="btn-icon">
+                      <i class="fa-regular fa-pen-to-square"></i>
+                    </label>
+
+                    <button class="btn-icon">
+                      <i
+                        class="fa-solid fa-trash-can"
+                        style="color: var(--danger)"
+                      ></i>
+                    </button>
+                  </td>
+                </tr>
+
+              </tbody>
+            </table>
+          </div>
         </div>
+
+        <div class="overlay popup-view">
+          <div class="modal">
+            <div class="modal-top">
+              <h3>Nhóm Web BCN</h3>
+
+              <label for="view1" class="close">
+                <i class="fa-solid fa-xmark"></i>
+              </label>
+            </div>
+
+            <div class="desc">Mã nhóm: <b>22716AF</b> • 8 thành viên</div>
+
+            <div class="member">
+              <span>Hà Thị R</span>
+              <span class="role">Trưởng nhóm</span>
+            </div>
+
+            <div class="member">
+              <span>Nguyễn Văn B</span>
+              <span class="role">Frontend</span>
+            </div>
+
+            <div class="member">
+              <span>Trần Văn D</span>
+              <span class="role">Backend</span>
+            </div>
+
+            <div class="member">
+              <span>Lê Hoàng Nam</span>
+              <span class="role">UI/UX</span>
+            </div>
+
+            <div class="bottom">
+              <label for="view1" class="cancel">Đóng</label>
+              <button class="save">Quản lý nhóm</button>
+            </div>
+          </div>
+        </div>
+      </div>
     </div>
 
-    <div class="lighthouse-beam"></div>
-</body>
+    <div class="overlay popup-view">
+      <div class="modal">
+        <div class="modal-top">
+          <h3>Nhóm Web BCN</h3>
+          <label for="view1" class="close">
+            <i class="fa-solid fa-xmark"></i>
+          </label>
+        </div>
+
+        <div class="desc">Mã nhóm: <b>22716AF</b> • 14 thành viên</div>
+
+        <div class="member">
+          <span>Trần Thị A</span>
+          <span class="role">Trưởng nhóm</span>
+        </div>
+
+        <div class="member">
+          <span>Nguyễn Văn B</span>
+          <span class="role">Frontend</span>
+        </div>
+
+        <div class="member">
+          <span>Lê Hoàng Nam</span>
+          <span class="role">Backend</span>
+        </div>
+
+        <div class="member">
+          <span>Phạm Quốc Duy</span>
+          <span class="role">UI/UX</span>
+        </div>
+
+        <div class="bottom">
+          <label for="view1" class="cancel">Đóng</label>
+          <button class="save">Quản lý nhóm</button>
+        </div>
+      </div>
+    </div>
+  </body>
 </html>

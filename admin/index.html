@@ -73,7 +73,7 @@
                     </label>
                 </div>
 
-                <div class="filter-bar">
+                <!-- <div class="filter-bar">
                     <select class="filter-select">
                         <option>Tất cả chuyên mục</option>
                         <option>Khám phá (Thiện nguyện)</option>
@@ -90,7 +90,7 @@
                     <button class="btn-filter-apply">
                         <i class="fa-solid fa-filter"></i> Lọc kết quả
                     </button>
-                </div>
+                </div> -->
 
                 <div class="table-scroll-container">
                     <table>
@@ -98,8 +98,9 @@
                             <tr>
                                 <th>Thành viên</th>
                                 <th>Thông tin chính</th>
-                                <th>Chuyên môn</th>
                                 <th>Ngày gia nhập</th>
+                                <th>Nhóm</th>
+                                <th>Vai trò</th>
                                 <th>Trạng thái</th>
                                 <th style="text-align: right;">Thao tác</th>
                             </tr>
@@ -120,12 +121,27 @@
                                     <div style="font-weight:700; font-size: 0.85rem; color: var(--slate-800);">Nữ</div>
                                     <div style="font-size:0.75rem; color:var(--slate-400); font-weight: 600;">MSSV: 21004521</div>
                                 </td>
-                                <td><span class="role-badge role-web">Web App</span></td>
                                 <td><span style="font-weight:700; color:var(--primary-dark); font-size: 0.85rem;">10/01/2024</span></td>
+                                <td>
+                                    <div class="group">
+                                        <div class="group-style gr1">Web BCN</div>
+                                        <div class="group-style gr2">Uside</div>
+                                        <div class="group-style gr3">Cộng tác viên BCN</div>
+                                        <div class="group-style"><i class="fa-solid fa-plus">  1</i></div>
+                                    </div>
+                                </td>
+                                <td>
+                                    <div class="group">
+                                        <div class="group-style gr6">Trưởng ban</div>
+                                        <div class="group-style gr7">Quản trị viên</div>
+                                        <div class="group-style gr8">Thành viên</div>
+                                        <div class="group-style"><i class="fa-solid fa-plus">  1</i></div>
+                                    </div>
+                                </td>
                                 <td><div class="status-pill"><span class="status-dot"></span><span>Hoạt động</span></div></td>
                                 <td style="text-align: right;">
                                     <div class="actions">
-                                        <button class="btn-icon" title="Sửa thông tin"><i class="fa-regular fa-pen-to-square"></i></button>
+                                        <button class="btn-icon" style="color: #484d52;" title="Sửa thông tin"><i class="fa-regular fa-pen-to-square"></i></button>
                                         <button class="btn-icon" style="color: #EF4444;" title="Vô hiệu hóa"><i class="fa-solid fa-user-slash"></i></button>
                                     </div>
                                 </td>
@@ -145,12 +161,22 @@
                                     <div style="font-weight:700; font-size: 0.85rem; color: var(--slate-800);">Nam</div>
                                     <div style="font-size:0.75rem; color:var(--slate-400); font-weight: 600;">MSSV: 22687121</div>
                                 </td>
-                                <td><span class="role-badge role-mobile">Mobile App</span></td>
                                 <td><span style="font-weight:700; color:var(--primary-dark); font-size: 0.85rem;">15/02/2024</span></td>
+                                <td>
+                                    <div class="group">
+                                        <div class="group-style gr4">Mobile app</div>
+                                        <div class="group-style gr2">Uside</div>
+                                    </div>
+                                </td>
+                                <td>
+                                    <div class="group">
+                                        <div class="group-style gr8">Thành viên</div>
+                                       </div>
+                                </td>
                                 <td><div class="status-pill"><span class="status-dot"></span><span>Hoạt động</span></div></td>
                                 <td style="text-align: right;">
                                     <div class="actions">
-                                        <button class="btn-icon" title="Sửa thông tin"><i class="fa-regular fa-pen-to-square"></i></button>
+                                        <button class="btn-icon" style="color: #484d52;" title="Sửa thông tin"><i class="fa-regular fa-pen-to-square"></i></button>
                                         <button class="btn-icon" style="color: #EF4444;" title="Vô hiệu hóa"><i class="fa-solid fa-user-slash"></i></button>
                                     </div>
                                 </td>
@@ -170,12 +196,22 @@
                                     <div style="font-weight:700; font-size: 0.85rem; color: var(--slate-800);">Nam</div>
                                     <div style="font-size:0.75rem; color:var(--slate-400); font-weight: 600;">MSSV: 23001245</div>
                                 </td>
-                                <td><span class="role-badge role-design">UI/UX Design</span></td>
                                 <td><span style="font-weight:700; color:var(--primary-dark); font-size: 0.85rem;">20/03/2024</span></td>
+                                <td>
+                                    <div class="group">
+                                        <div class="group-style gr5">Thực tập sinh Uside</div>
+                                        <div class="group-style gr3">Cộng tác viên BCN</div>
+                                    </div>
+                                </td>
+                                <td>
+                                    <div class="group">
+                                        <div class="group-style gr9">Cộng tác viên</div>
+                                    </div>
+                                </td>
                                 <td><div class="status-pill"><span class="status-dot"></span><span>Hoạt động</span></div></td>
                                 <td style="text-align: right;">
                                     <div class="actions">
-                                        <button class="btn-icon" title="Sửa thông tin"><i class="fa-regular fa-pen-to-square"></i></button>
+                                        <button class="btn-icon" style="color: #484d52;" title="Sửa thông tin"><i class="fa-regular fa-pen-to-square"></i></button>
                                         <button class="btn-icon" style="color: #EF4444;" title="Vô hiệu hóa"><i class="fa-solid fa-user-slash"></i></button>
                                     </div>
                                 </td>
@@ -188,39 +224,138 @@
     </div>
 
     <div class="modal-overlay">
-        <div class="modal-content">
-            <div class="modal-header-box">
-                <h3>Hồ sơ thành viên</h3>
-                <label for="modal-toggle" class="close-modal-btn"><i class="fa-solid fa-xmark"></i></label>
-            </div>
-            
-            <form onsubmit="event.preventDefault(); document.getElementById('modal-toggle').checked = false;">
-                <div class="form-grid">
-                    <div class="form-group"><label class="form-label">Họ và tên</label><input type="text" class="form-input" placeholder="VD: Nguyễn Hải Nam" required></div>
-                    <div class="form-group"><label class="form-label">ID Discord</label><input type="text" class="form-input" placeholder="VD: name#1234" required></div>
-                </div>
-                <div class="form-grid">
-                    <div class="form-group"><label class="form-label">Mã số sinh viên</label><input type="text" class="form-input" placeholder="VD: 22687121" required></div>
-                    <div class="form-group">
-                        <label class="form-label">Chuyên môn</label>
-                        <select class="form-input" style="cursor: pointer;">
-                            <option>Web App</option>
-                            <option>Mobile App</option>
-                            <option>UI/UX Design</option>
-                        </select>
-                    </div>
-                </div>
-                <div class="form-grid">
-                    <div class="form-group"><label class="form-label">Ngày sinh</label><input type="date" class="form-input" required></div>
-                    <div class="form-group"><label class="form-label">Ngày gia nhập</label><input type="date" class="form-input" required></div>
-                </div>
-                <div class="modal-footer">
-                    <label for="modal-toggle" class="btn-cancel-modal">Hủy bỏ</label>
-                    <button type="submit" class="btn-save-modal">Kích hoạt hồ sơ</button>
-                </div>
-            </form>
-        </div>
+  <div class="modal-content">
+
+    <div class="modal-header">
+      <h3>Hồ sơ thành viên</h3>
+      <label for="modal-toggle" class="close-btn">
+        <i class="fa-solid fa-xmark"></i>
+      </label>
     </div>
+
+    <form onsubmit="event.preventDefault(); document.getElementById('modal-toggle').checked = false;">
+
+      <div class="form-row">
+        <div class="form-group">
+          <label class="form-label">Họ và tên</label>
+          <input type="text" class="form-input" placeholder="VD: Nguyễn Hải Nam" required>
+        </div>
+
+        <div class="form-group">
+          <label class="form-label">ID Discord</label>
+          <input type="text" class="form-input" placeholder="VD: name#1234" required>
+        </div>
+      </div>
+
+      <div class="form-row">
+        <div class="form-group">
+          <label class="form-label">Mã số sinh viên</label>
+          <input type="text" class="form-input" placeholder="VD: 22687121" required>
+        </div>
+
+        <div class="form-group">
+          <label class="form-label">Nhóm</label>
+          <select class="form-input">
+            <option>Web BCN</option>
+            <option>Mobile App</option>
+            <option>Uside</option>
+            <option>Thực tập sinh Uside</option>
+            <option>Cộng tác viên BCN</option>
+          </select>
+        </div>
+      </div>
+
+      <div class="form-row">
+        <div class="form-group">
+          <label class="form-label">Ngày sinh</label>
+          <input type="date" class="form-input" required>
+        </div>
+
+        <div class="form-group">
+          <label class="form-label">Ngày gia nhập</label>
+          <input type="date" class="form-input" required>
+        </div>
+      </div>
+
+      <div class="role-picker-container">
+        <label class="form-label">Gán vai trò</label>
+
+        <div class="role-selector-modal">
+
+          <label class="modal-role-item">
+            <input type="checkbox">
+            <span>Quản trị viên</span>
+            <div class="dot-ovr"><i class="fa-solid fa-check"></i></div>
+          </label>
+
+          <label class="modal-role-item">
+            <input type="checkbox">
+            <span>Trưởng ban</span>
+            <div class="dot-ovr"><i class="fa-solid fa-check"></i></div>
+          </label>
+
+          <label class="modal-role-item">
+            <input type="checkbox">
+            <span>Thành viên</span>
+            <div class="dot-ovr"><i class="fa-solid fa-check"></i></div>
+          </label>
+
+          <label class="modal-role-item">
+            <input type="checkbox">
+            <span>Cộng tác viên</span>
+            <div class="dot-ovr"><i class="fa-solid fa-check"></i></div>
+          </label>
+
+        </div>
+      </div>
+
+      <div class="role-picker-container">
+        <label class="form-label">Thêm vào nhóm</label>
+
+        <div class="role-selector-modal">
+
+          <label class="modal-role-item">
+            <input type="checkbox">
+            <span>Web BCN</span>
+            <div class="dot-ovr"><i class="fa-solid fa-check"></i></div>
+          </label>
+
+          <label class="modal-role-item">
+            <input type="checkbox">
+            <span>Mobile app</span>
+            <div class="dot-ovr"><i class="fa-solid fa-check"></i></div>
+          </label>
+
+          <label class="modal-role-item">
+            <input type="checkbox">
+            <span>Uside</span>
+            <div class="dot-ovr"><i class="fa-solid fa-check"></i></div>
+          </label>
+
+          <label class="modal-role-item">
+            <input type="checkbox">
+            <span>Thực tập sinh Uside</span>
+            <div class="dot-ovr"><i class="fa-solid fa-check"></i></div>
+          </label>
+
+          <label class="modal-role-item">
+            <input type="checkbox">
+            <span>Cộng tác viên BCN</span>
+            <div class="dot-ovr"><i class="fa-solid fa-check"></i></div>
+          </label>
+
+        </div>
+      </div>
+
+      <div class="modal-footer">
+        <label for="modal-toggle" class="btn-cancel-modal">Hủy bỏ</label>
+        <button type="submit" class="btn-save-modal">Lưu hồ sơ</button>
+      </div>
+
+    </form>
+
+  </div>
+</div>
 
     <div class="lighthouse-beam"></div>
 </body>

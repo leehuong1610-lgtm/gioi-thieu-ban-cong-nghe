@@ -1,0 +1,635 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>BCN PANEL - Quản lý nhóm</title>
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+
+<style>
+:root{
+--primary:#1C4E75;
+--blue:#2FA0C6;
+--bg:#EAF6FD;
+--white:#fff;
+--text:#1E293B;
+--muted:#64748B;
+--line:#E2E8F0;
+}
+
+*{
+margin:0;
+padding:0;
+box-sizing:border-box;
+font-family:Segoe UI,sans-serif;
+}
+
+body{
+background:radial-gradient(circle at top,#F0F9FF,#BAE6FD);
+min-height:100vh;
+display:flex;
+color:var(--text);
+}
+
+/* sidebar */
+.sidebar{
+width:270px;
+background:rgba(255,255,255,.18);
+backdrop-filter:blur(18px);
+border-right:1px solid rgba(255,255,255,.4);
+padding:22px 14px;
+display:flex;
+flex-direction:column;
+}
+
+.logo{
+display:flex;
+align-items:center;
+gap:12px;
+font-weight:800;
+font-size:28px;
+color:var(--primary);
+margin-bottom:28px;
+padding:0 8px;
+}
+
+.logo-box{
+width:46px;
+height:46px;
+border-radius:14px;
+background:linear-gradient(135deg,var(--blue),var(--primary));
+display:flex;
+align-items:center;
+justify-content:center;
+color:#fff;
+font-size:18px;
+}
+
+.menu-title{
+font-size:11px;
+font-weight:800;
+color:#94A3B8;
+letter-spacing:1px;
+padding:8px 14px;
+margin-bottom:6px;
+}
+
+.nav a{
+display:flex;
+align-items:center;
+gap:12px;
+padding:14px 16px;
+border-radius:18px;
+text-decoration:none;
+color:var(--primary);
+font-weight:700;
+margin-bottom:8px;
+transition:.2s;
+}
+
+.nav a.active,
+.nav a:hover{
+background:var(--primary);
+color:#fff;
+}
+
+.logout{
+margin-top:auto;
+background:#FEE2E2;
+color:#EF4444;
+padding:14px 16px;
+border-radius:18px;
+font-weight:800;
+display:flex;
+gap:10px;
+align-items:center;
+}
+
+/* main */
+.main{
+flex:1;
+display:flex;
+flex-direction:column;
+}
+
+.header{
+height:84px;
+padding:0 34px;
+display:flex;
+align-items:center;
+justify-content:space-between;
+border-bottom:1px solid rgba(255,255,255,.35);
+background:rgba(255,255,255,.14);
+}
+
+.search{
+position:relative;
+width:420px;
+}
+
+.search i{
+position:absolute;
+left:14px;
+top:14px;
+color:#94A3B8;
+}
+
+.search input{
+width:100%;
+padding:13px 14px 13px 42px;
+border:none;
+outline:none;
+border-radius:16px;
+background:rgba(255,255,255,.8);
+font-weight:700;
+}
+
+.profile{
+background:rgba(255,255,255,.8);
+padding:8px 10px 8px 16px;
+border-radius:40px;
+display:flex;
+align-items:center;
+gap:12px;
+font-weight:800;
+color:var(--primary);
+}
+
+.crown{
+width:42px;
+height:42px;
+border-radius:50%;
+background:linear-gradient(135deg,var(--blue),var(--primary));
+display:flex;
+align-items:center;
+justify-content:center;
+color:#fff;
+}
+
+/* content */
+.content{
+padding:34px;
+}
+
+.card{
+background:rgba(255,255,255,.78);
+border-radius:34px;
+overflow:hidden;
+box-shadow:0 18px 45px rgba(0,0,0,.04);
+}
+
+.card-top{
+padding:30px 34px;
+display:flex;
+justify-content:space-between;
+align-items:center;
+border-bottom:1px solid #EEF2F7;
+gap:15px;
+}
+
+.card-top h2{
+font-size:28px;
+color:var(--primary);
+font-weight:800;
+}
+
+.card-top p{
+margin-top:6px;
+color:var(--muted);
+font-size:14px;
+}
+
+.btn-add{
+border:none;
+padding:16px 22px;
+border-radius:18px;
+font-weight:800;
+font-size:16px;
+cursor:pointer;
+background:linear-gradient(135deg,var(--blue),var(--primary));
+color:#fff;
+display:flex;
+align-items:center;
+gap:10px;
+}
+
+/* table */
+.table-wrap{
+overflow:auto;
+}
+
+table{
+width:100%;
+border-collapse:collapse;
+min-width:1100px;
+}
+
+th{
+padding:18px 28px;
+text-align:left;
+font-size:12px;
+text-transform:uppercase;
+color:#94A3B8;
+border-bottom:1px solid #EEF2F7;
+}
+
+td{
+padding:22px 28px;
+border-bottom:1px solid #F8FAFC;
+font-weight:700;
+}
+
+tr:hover{
+background:#F8FBFF;
+}
+
+.code{
+color:#0EA5E9;
+font-weight:800;
+}
+
+.badge{
+padding:7px 14px;
+border-radius:999px;
+font-size:13px;
+font-weight:800;
+display:inline-block;
+}
+
+.blue{background:#E0F2FE;color:#0369A1;}
+.pink{background:#FCE7F3;color:#DB2777;}
+.green{background:#DCFCE7;color:#15803D;}
+.purple{background:#F3E8FF;color:#9333EA;}
+.orange{background:#FFF7ED;color:#EA580C;}
+
+.member-count{
+color:#334155;
+}
+
+.actions{
+display:flex;
+gap:8px;
+}
+
+.btn-icon{
+width:36px;
+height:36px;
+border:none;
+border-radius:12px;
+cursor:pointer;
+background:#F8FAFC;
+color:#64748B;
+}
+
+.btn-icon:hover{
+background:#E0F2FE;
+color:#2563EB;
+}
+
+/* popup */
+#view1,#create1{
+display:none;
+}
+
+.overlay{
+position:fixed;
+inset:0;
+background:rgba(15,23,42,.45);
+backdrop-filter:blur(5px);
+display:none;
+align-items:center;
+justify-content:center;
+padding:20px;
+z-index:999;
+}
+
+#view1:checked ~ .popup-view,
+#create1:checked ~ .popup-create{
+display:flex;
+}
+
+.modal{
+width:100%;
+max-width:520px;
+background:#fff;
+border-radius:28px;
+padding:28px;
+box-shadow:0 30px 60px rgba(0,0,0,.14);
+}
+
+.modal-top{
+display:flex;
+justify-content:space-between;
+align-items:center;
+margin-bottom:12px;
+}
+
+.modal-top h3{
+font-size:24px;
+font-weight:800;
+color:var(--primary);
+}
+
+.close{
+width:36px;
+height:36px;
+border-radius:50%;
+background:#F1F5F9;
+display:flex;
+align-items:center;
+justify-content:center;
+cursor:pointer;
+}
+
+.desc{
+font-size:14px;
+color:var(--muted);
+margin-bottom:18px;
+}
+
+.member{
+display:flex;
+justify-content:space-between;
+padding:14px;
+border-radius:16px;
+background:#F8FAFC;
+margin-bottom:10px;
+font-weight:700;
+}
+
+.role{
+font-size:12px;
+padding:5px 10px;
+border-radius:999px;
+background:#EDE9FE;
+color:#7C3AED;
+font-weight:800;
+}
+
+.input{
+width:100%;
+padding:14px;
+border:1px solid var(--line);
+border-radius:14px;
+outline:none;
+font-weight:700;
+margin-bottom:14px;
+}
+
+.bottom{
+display:flex;
+gap:12px;
+margin-top:8px;
+}
+
+.cancel,.save{
+flex:1;
+padding:14px;
+border:none;
+border-radius:14px;
+font-weight:800;
+cursor:pointer;
+}
+
+.cancel{
+background:#F1F5F9;
+}
+
+.save{
+background:linear-gradient(135deg,var(--blue),var(--primary));
+color:#fff;
+}
+
+@media(max-width:900px){
+.sidebar{display:none;}
+.search{width:250px;}
+.content{padding:15px;}
+}
+</style>
+</head>
+
+<body>
+
+<input type="checkbox" id="view1">
+<input type="checkbox" id="create1">
+
+<!-- sidebar -->
+<div class="sidebar">
+<div class="logo">
+<div class="logo-box">BCN</div>
+BCN PANEL
+</div>
+
+<div class="menu-title">MENU</div>
+
+<div class="nav">
+<a href="#"><i class="fa-solid fa-chart-pie"></i> Tổng quan</a>
+<a href="#"><i class="fa-solid fa-user"></i> Quản lý người dùng</a>
+<a href="#" class="active"><i class="fa-solid fa-users"></i> Quản lý nhóm</a>
+<a href="#"><i class="fa-solid fa-user-gear"></i> Quản lý vai trò</a>
+<a href="#"><i class="fa-solid fa-bell"></i> Thông báo</a>
+</div>
+
+<div class="logout">
+<i class="fa-solid fa-power-off"></i>
+Cập cảng
+</div>
+</div>
+
+<!-- main -->
+<div class="main">
+
+<div class="header">
+<div class="search">
+<i class="fa-solid fa-magnifying-glass"></i>
+<input type="text" placeholder="Tìm kiếm nhóm...">
+</div>
+
+<div class="profile">
+Thuyền trưởng
+<div class="crown"><i class="fa-solid fa-crown"></i></div>
+</div>
+</div>
+
+<div class="content">
+
+<div class="card">
+
+<div class="card-top">
+<div>
+<h2>Phân nhóm thủy thủ đoàn</h2>
+<p>Quản lý nhóm, mã nhóm và thành viên hiện tại.</p>
+</div>
+
+<label for="create1" class="btn-add">
+<i class="fa-solid fa-plus"></i>
+Tạo nhóm mới
+</label>
+</div>
+
+<div class="table-wrap">
+<table>
+
+<thead>
+<tr>
+<th>Mã nhóm</th>
+<th>Tên nhóm</th>
+<th>Thành viên</th>
+<th>Trưởng nhóm</th>
+<th>Thao tác</th>
+</tr>
+</thead>
+
+<tbody>
+
+<tr>
+<td class="code">22716AF</td>
+<td><span class="badge blue">Web BCN</span></td>
+<td class="member-count">14 người</td>
+<td>Trần Thị A</td>
+<td>
+<div class="actions">
+<label for="view1" class="btn-icon"><i class="fa-solid fa-eye"></i></label>
+<button class="btn-icon"><i class="fa-solid fa-pen"></i></button>
+<button class="btn-icon"><i class="fa-solid fa-trash"></i></button>
+</div>
+</td>
+</tr>
+
+<tr>
+<td class="code">22744MA</td>
+<td><span class="badge pink">Mobile App</span></td>
+<td>10 người</td>
+<td>Nguyễn Văn B</td>
+<td>
+<div class="actions">
+<button class="btn-icon"><i class="fa-solid fa-eye"></i></button>
+<button class="btn-icon"><i class="fa-solid fa-pen"></i></button>
+<button class="btn-icon"><i class="fa-solid fa-trash"></i></button>
+</div>
+</td>
+</tr>
+
+<tr>
+<td class="code">29416US</td>
+<td><span class="badge green">Uside</span></td>
+<td>8 người</td>
+<td>Lê Hoàng Nam</td>
+<td>
+<div class="actions">
+<button class="btn-icon"><i class="fa-solid fa-eye"></i></button>
+<button class="btn-icon"><i class="fa-solid fa-pen"></i></button>
+<button class="btn-icon"><i class="fa-solid fa-trash"></i></button>
+</div>
+</td>
+</tr>
+
+<tr>
+<td class="code">26547TT</td>
+<td><span class="badge purple">Thực tập sinh Uside</span></td>
+<td>6 người</td>
+<td>Phạm Quốc Duy</td>
+<td>
+<div class="actions">
+<button class="btn-icon"><i class="fa-solid fa-eye"></i></button>
+<button class="btn-icon"><i class="fa-solid fa-pen"></i></button>
+<button class="btn-icon"><i class="fa-solid fa-trash"></i></button>
+</div>
+</td>
+</tr>
+
+<tr>
+<td class="code">24763CT</td>
+<td><span class="badge orange">Cộng tác viên BCN</span></td>
+<td>22 người</td>
+<td>Admin</td>
+<td>
+<div class="actions">
+<button class="btn-icon"><i class="fa-solid fa-eye"></i></button>
+<button class="btn-icon"><i class="fa-solid fa-pen"></i></button>
+<button class="btn-icon"><i class="fa-solid fa-trash"></i></button>
+</div>
+</td>
+</tr>
+
+</tbody>
+
+</table>
+</div>
+
+</div>
+</div>
+</div>
+
+<!-- popup xem thành viên -->
+<div class="overlay popup-view">
+<div class="modal">
+
+<div class="modal-top">
+<h3>Nhóm Web BCN</h3>
+<label for="view1" class="close">
+<i class="fa-solid fa-xmark"></i>
+</label>
+</div>
+
+<div class="desc">
+Mã nhóm: <b>22716AF</b> • 14 thành viên
+</div>
+
+<div class="member">
+<span>Trần Thị A</span>
+<span class="role">Trưởng nhóm</span>
+</div>
+
+<div class="member">
+<span>Nguyễn Văn B</span>
+<span class="role">Frontend</span>
+</div>
+
+<div class="member">
+<span>Lê Hoàng Nam</span>
+<span class="role">Backend</span>
+</div>
+
+<div class="member">
+<span>Phạm Quốc Duy</span>
+<span class="role">UI/UX</span>
+</div>
+
+<div class="bottom">
+<label for="view1" class="cancel">Đóng</label>
+<button class="save">Quản lý nhóm</button>
+</div>
+
+</div>
+</div>
+
+<!-- popup tạo nhóm -->
+<div class="overlay popup-create">
+<div class="modal">
+
+<div class="modal-top">
+<h3>Tạo nhóm mới</h3>
+<label for="create1" class="close">
+<i class="fa-solid fa-xmark"></i>
+</label>
+</div>
+
+<div class="desc">
+Thêm nhóm mới vào hệ thống quản lý.
+</div>
+
+<input class="input" placeholder="Mã nhóm VD: 56789WB">
+<input class="input" placeholder="Tên nhóm VD: Data BCN">
+<input class="input" placeholder="Trưởng nhóm">
+
+<div class="bottom">
+<label for="create1" class="cancel">Hủy</label>
+<button class="save">Tạo nhóm</button>
+</div>
+
+</div>
+</div>
+
+</body>
+</html>
