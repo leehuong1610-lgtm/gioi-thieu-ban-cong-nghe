@@ -1,4 +1,3 @@
-
 <!DOCTYPE html>
 <html lang="vi">
 <head>
@@ -10,7 +9,26 @@
     <link rel="stylesheet" href="manage-member.css">
 </head>
 <body>
+
     <input type="checkbox" id="modal-toggle" style="display: none;">
+    
+    <!-- Member 1 -->
+    <input type="checkbox" id="edit-1" style="display: none;">
+    <input type="checkbox" id="group-1" style="display: none;">
+    <input type="checkbox" id="role-1" style="display: none;">
+    <input type="checkbox" id="disable-1" style="display: none;">
+    
+    <!-- Member 2 -->
+    <input type="checkbox" id="edit-2" style="display: none;">
+    <input type="checkbox" id="group-2" style="display: none;">
+    <input type="checkbox" id="role-2" style="display: none;">
+    <input type="checkbox" id="disable-2" style="display: none;">
+    
+    <!-- Member 3 -->
+    <input type="checkbox" id="edit-3" style="display: none;">
+    <input type="checkbox" id="group-3" style="display: none;">
+    <input type="checkbox" id="role-3" style="display: none;">
+    <input type="checkbox" id="disable-3" style="display: none;">
 
     <aside id="sidebar">
         <div class="sidebar-header">
@@ -20,7 +38,7 @@
         <nav class="nav-list">
             <div class="nav-label">Menu</div>
             <a href="over-view.html" class="nav-item"><i class="fa-solid fa-chart-pie"></i><span>Tổng quan</span></a>
-            <a href="index.html" class="nav-item  active"><i class="fa-solid fa-user"></i><span>Quản lý người dùng</span></a>
+            <a href="index.html" class="nav-item active"><i class="fa-solid fa-user"></i><span>Quản lý người dùng</span></a>
             <a href="manage-group.html" class="nav-item"><i class="fa-solid fa-users"></i><span>Quản lý nhóm</span></a>
             <a href="manage-role.html" class="nav-item"><i class="fa-solid fa-user-gear"></i><span>Quản lý vai trò</span></a>
             <a href="notification.html" class="nav-item"><i class="fa-solid fa-compass"></i><span>Thông báo</span></a>
@@ -73,25 +91,6 @@
                     </label>
                 </div>
 
-                <!-- <div class="filter-bar">
-                    <select class="filter-select">
-                        <option>Tất cả chuyên mục</option>
-                        <option>Khám phá (Thiện nguyện)</option>
-                        <option>Sáng tạo (Nocode)</option>
-                        <option>Học thuật (Workshop)</option>
-                        <option>Teambuilding</option>
-                    </select>
-                    <select class="filter-select">
-                        <option>Tất cả trạng thái</option>
-                        <option>Đang mở đăng ký</option>
-                        <option>Dự kiến khởi hành</option>
-                        <option>Đã hoàn thành</option>
-                    </select>
-                    <button class="btn-filter-apply">
-                        <i class="fa-solid fa-filter"></i> Lọc kết quả
-                    </button>
-                </div> -->
-
                 <div class="table-scroll-container">
                     <table>
                         <thead>
@@ -106,7 +105,7 @@
                             </tr>
                         </thead>
                         <tbody>
-                            
+                            <!-- MEMBER 1: TRẦN THỊ A -->
                             <tr>
                                 <td>
                                     <div class="member-profile-cell">
@@ -127,7 +126,7 @@
                                         <div class="group-style gr1">Web BCN</div>
                                         <div class="group-style gr2">Uside</div>
                                         <div class="group-style gr3">Cộng tác viên BCN</div>
-                                        <div class="group-style"><i class="fa-solid fa-plus">  1</i></div>
+                                        <label for="group-1" class="group-style" title="Gán thêm nhóm"><i class="fa-solid fa-plus">  1</i></label>
                                     </div>
                                 </td>
                                 <td>
@@ -135,18 +134,19 @@
                                         <div class="group-style gr6">Trưởng ban</div>
                                         <div class="group-style gr7">Quản trị viên</div>
                                         <div class="group-style gr8">Thành viên</div>
-                                        <div class="group-style"><i class="fa-solid fa-plus">  1</i></div>
+                                        <label for="role-1" class="group-style" title="Gán thêm vai trò"><i class="fa-solid fa-plus">  1</i></label>
                                     </div>
                                 </td>
                                 <td><div class="status-pill"><span class="status-dot"></span><span>Hoạt động</span></div></td>
                                 <td style="text-align: right;">
                                     <div class="actions">
-                                        <button class="btn-icon" style="color: #484d52;" title="Sửa thông tin"><i class="fa-regular fa-pen-to-square"></i></button>
-                                        <button class="btn-icon" style="color: #EF4444;" title="Vô hiệu hóa"><i class="fa-solid fa-user-slash"></i></button>
+                                        <label for="edit-1" class="btn-icon" style="color: #484d52;" title="Sửa thông tin"><i class="fa-regular fa-pen-to-square"></i></label>
+                                        <label for="disable-1" class="btn-icon" style="color: #EF4444;" title="Vô hiệu hóa"><i class="fa-solid fa-user-slash"></i></label>
                                     </div>
                                 </td>
                             </tr>
                             
+                            <!-- MEMBER 2: NGUYỄN VĂN B -->
                             <tr>
                                 <td>
                                     <div class="member-profile-cell">
@@ -166,22 +166,25 @@
                                     <div class="group">
                                         <div class="group-style gr4">Mobile app</div>
                                         <div class="group-style gr2">Uside</div>
+                                        <label for="group-2" class="group-style" title="Gán thêm nhóm"><i class="fa-solid fa-plus"></i></label>
                                     </div>
                                 </td>
                                 <td>
                                     <div class="group">
                                         <div class="group-style gr8">Thành viên</div>
-                                       </div>
+                                        <label for="role-2" class="group-style" title="Gán thêm vai trò"><i class="fa-solid fa-plus"></i></label>
+                                    </div>
                                 </td>
                                 <td><div class="status-pill"><span class="status-dot"></span><span>Hoạt động</span></div></td>
                                 <td style="text-align: right;">
                                     <div class="actions">
-                                        <button class="btn-icon" style="color: #484d52;" title="Sửa thông tin"><i class="fa-regular fa-pen-to-square"></i></button>
-                                        <button class="btn-icon" style="color: #EF4444;" title="Vô hiệu hóa"><i class="fa-solid fa-user-slash"></i></button>
+                                        <label for="edit-2" class="btn-icon" style="color: #484d52;" title="Sửa thông tin"><i class="fa-regular fa-pen-to-square"></i></label>
+                                        <label for="disable-2" class="btn-icon" style="color: #EF4444;" title="Vô hiệu hóa"><i class="fa-solid fa-user-slash"></i></label>
                                     </div>
                                 </td>
                             </tr>
 
+                            <!-- MEMBER 3: LÊ HOÀNG NAM -->
                             <tr>
                                 <td>
                                     <div class="member-profile-cell">
@@ -201,18 +204,20 @@
                                     <div class="group">
                                         <div class="group-style gr5">Thực tập sinh Uside</div>
                                         <div class="group-style gr3">Cộng tác viên BCN</div>
+                                        <label for="group-3" class="group-style" title="Gán thêm nhóm"><i class="fa-solid fa-plus"></i></label>
                                     </div>
                                 </td>
                                 <td>
                                     <div class="group">
                                         <div class="group-style gr9">Cộng tác viên</div>
+                                        <label for="role-3" class="group-style" title="Gán thêm vai trò"><i class="fa-solid fa-plus"></i></label>
                                     </div>
                                 </td>
                                 <td><div class="status-pill"><span class="status-dot"></span><span>Hoạt động</span></div></td>
                                 <td style="text-align: right;">
                                     <div class="actions">
-                                        <button class="btn-icon" style="color: #484d52;" title="Sửa thông tin"><i class="fa-regular fa-pen-to-square"></i></button>
-                                        <button class="btn-icon" style="color: #EF4444;" title="Vô hiệu hóa"><i class="fa-solid fa-user-slash"></i></button>
+                                        <label for="edit-3" class="btn-icon" style="color: #484d52;" title="Sửa thông tin"><i class="fa-regular fa-pen-to-square"></i></label>
+                                        <label for="disable-3" class="btn-icon" style="color: #EF4444;" title="Vô hiệu hóa"><i class="fa-solid fa-user-slash"></i></label>
                                     </div>
                                 </td>
                             </tr>
@@ -223,140 +228,328 @@
         </div>
     </div>
 
-    <div class="modal-overlay">
-  <div class="modal-content">
-
-    <div class="modal-header">
-      <h3>Hồ sơ thành viên</h3>
-      <label for="modal-toggle" class="close-btn">
-        <i class="fa-solid fa-xmark"></i>
-      </label>
+    <!-- GROUP - MEMBER 1 -->
+    <div class="modal-overlay modal-group-1">
+        <div class="modal-content small-form">
+            <div class="modal-header"><h3>Cập nhật nhóm - Trần Thị A</h3><label for="group-1" class="close-btn"><i class="fa-solid fa-xmark"></i></label></div>
+            <form>
+                <div class="role-picker-container"><label class="form-label">Thêm vào nhóm</label>
+                    <div class="role-selector-modal">
+                        <label class="modal-role-item"><input type="checkbox" checked><span>Web BCN</span><div class="dot-ovr"><i class="fa-solid fa-check"></i></div></label>
+                        <label class="modal-role-item"><input type="checkbox" checked><span>Mobile app</span><div class="dot-ovr"><i class="fa-solid fa-check"></i></div></label>
+                        <label class="modal-role-item"><input type="checkbox" checked><span>Uside</span><div class="dot-ovr"><i class="fa-solid fa-check"></i></div></label>
+                        <label class="modal-role-item"><input type="checkbox" ><span>Thực tập sinh Uside</span><div class="dot-ovr"><i class="fa-solid fa-check"></i></div></label>
+                        <label class="modal-role-item"><input type="checkbox" checked><span>Cộng tác viên BCN</span><div class="dot-ovr"><i class="fa-solid fa-check"></i></div></label>
+                    </div>
+                </div>
+                <div class="modal-footer"><label for="group-1" class="btn-cancel-modal">Hủy bỏ</label><button type="submit" class="btn-save-modal">Lưu nhóm</button></div>
+            </form>
+        </div>
     </div>
 
-    <form onsubmit="event.preventDefault(); document.getElementById('modal-toggle').checked = false;">
-
-      <div class="form-row">
-        <div class="form-group">
-          <label class="form-label">Họ và tên</label>
-          <input type="text" class="form-input" placeholder="VD: Nguyễn Hải Nam" required>
+    <!-- ROLE - MEMBER 1 -->
+    <div class="modal-overlay modal-role-1">
+        <div class="modal-content small-form">
+            <div class="modal-header"><h3>Cập nhật vai trò - Trần Thị A</h3><label for="role-1" class="close-btn"><i class="fa-solid fa-xmark"></i></label></div>
+            <form>
+                <div class="role-picker-container"><label class="form-label">Thêm vai trò</label>
+                    <div class="role-selector-modal">
+                        <label class="modal-role-item"><input type="checkbox" checked><span>Trưởng ban</span><div class="dot-ovr"><i class="fa-solid fa-check"></i></div></label>
+                        <label class="modal-role-item"><input type="checkbox" checked><span>Quản trị viên</span><div class="dot-ovr"><i class="fa-solid fa-check"></i></div></label>
+                        <label class="modal-role-item"><input type="checkbox" checked><span>Thành viên</span><div class="dot-ovr"><i class="fa-solid fa-check"></i></div></label>
+                        <label class="modal-role-item"><input type="checkbox"><span>Cộng tác viên</span><div class="dot-ovr"><i class="fa-solid fa-check"></i></div></label>
+                    </div>
+                </div>
+                <div class="modal-footer"><label for="role-1" class="btn-cancel-modal">Hủy bỏ</label><button type="submit" class="btn-save-modal">Lưu vai trò</button></div>
+            </form>
         </div>
+    </div>
 
-        <div class="form-group">
-          <label class="form-label">ID Discord</label>
-          <input type="text" class="form-input" placeholder="VD: name#1234" required>
+    <!-- GROUP - MEMBER 2 -->
+    <div class="modal-overlay modal-group-2">
+        <div class="modal-content small-form">
+            <div class="modal-header"><h3>Cập nhật nhóm - Nguyễn Văn B</h3><label for="group-2" class="close-btn"><i class="fa-solid fa-xmark"></i></label></div>
+            <form>
+                <div class="role-picker-container"><label class="form-label">Thêm vào nhóm</label>
+                    <div class="role-selector-modal">
+                        <label class="modal-role-item"><input type="checkbox" ><span>Web BCN</span><div class="dot-ovr"><i class="fa-solid fa-check"></i></div></label>
+                        <label class="modal-role-item"><input type="checkbox" checked><span>Mobile app</span><div class="dot-ovr"><i class="fa-solid fa-check"></i></div></label>
+                        <label class="modal-role-item"><input type="checkbox" checked><span>Uside</span><div class="dot-ovr"><i class="fa-solid fa-check"></i></div></label>
+                        <label class="modal-role-item"><input type="checkbox" ><span>Thực tập sinh Uside</span><div class="dot-ovr"><i class="fa-solid fa-check"></i></div></label>
+                        <label class="modal-role-item"><input type="checkbox" ><span>Cộng tác viên BCN</span><div class="dot-ovr"><i class="fa-solid fa-check"></i></div></label>
+                    </div>
+                </div>
+                <div class="modal-footer"><label for="group-2" class="btn-cancel-modal">Hủy bỏ</label><button type="submit" class="btn-save-modal">Lưu nhóm</button></div>
+            </form>
         </div>
-      </div>
+    </div>
 
-      <div class="form-row">
-        <div class="form-group">
-          <label class="form-label">Mã số sinh viên</label>
-          <input type="text" class="form-input" placeholder="VD: 22687121" required>
+    <!-- ROLE - MEMBER 2 -->
+    <div class="modal-overlay modal-role-2">
+        <div class="modal-content small-form">
+            <div class="modal-header"><h3>Cập nhật vai trò - Nguyễn Văn B</h3><label for="role-2" class="close-btn"><i class="fa-solid fa-xmark"></i></label></div>
+            <form>
+                <div class="role-picker-container"><label class="form-label">Thêm vai trò</label>
+                    <div class="role-selector-modal">
+                        <label class="modal-role-item"><input type="checkbox" ><span>Trưởng ban</span><div class="dot-ovr"><i class="fa-solid fa-check"></i></div></label>
+                        <label class="modal-role-item"><input type="checkbox" ><span>Quản trị viên</span><div class="dot-ovr"><i class="fa-solid fa-check"></i></div></label>
+                        <label class="modal-role-item"><input type="checkbox" checked><span>Thành viên</span><div class="dot-ovr"><i class="fa-solid fa-check"></i></div></label>
+                        <label class="modal-role-item"><input type="checkbox"><span>Cộng tác viên</span><div class="dot-ovr"><i class="fa-solid fa-check"></i></div></label>
+                    </div>
+                </div>
+                <div class="modal-footer"><label for="role-2" class="btn-cancel-modal">Hủy bỏ</label><button type="submit" class="btn-save-modal">Lưu vai trò</button></div>
+            </form>
         </div>
+    </div>
 
-        <div class="form-group">
-          <label class="form-label">Nhóm</label>
-          <select class="form-input">
-            <option>Web BCN</option>
-            <option>Mobile App</option>
-            <option>Uside</option>
-            <option>Thực tập sinh Uside</option>
-            <option>Cộng tác viên BCN</option>
-          </select>
+    <!-- GROUP - MEMBER 3 -->
+    <div class="modal-overlay modal-group-3">
+        <div class="modal-content small-form">
+            <div class="modal-header"><h3>Cập nhật nhóm - Lê Hoàng Nam</h3><label for="group-3" class="close-btn"><i class="fa-solid fa-xmark"></i></label></div>
+            <form>
+                <div class="role-picker-container"><label class="form-label">Thêm vào nhóm</label>
+                    <div class="role-selector-modal">
+                        <label class="modal-role-item"><input type="checkbox" ><span>Web BCN</span><div class="dot-ovr"><i class="fa-solid fa-check"></i></div></label>
+                        <label class="modal-role-item"><input type="checkbox" ><span>Mobile app</span><div class="dot-ovr"><i class="fa-solid fa-check"></i></div></label>
+                        <label class="modal-role-item"><input type="checkbox" ><span>Uside</span><div class="dot-ovr"><i class="fa-solid fa-check"></i></div></label>
+                        <label class="modal-role-item"><input type="checkbox" checked><span>Thực tập sinh Uside</span><div class="dot-ovr"><i class="fa-solid fa-check"></i></div></label>
+                        <label class="modal-role-item"><input type="checkbox" checked><span>Cộng tác viên BCN</span><div class="dot-ovr"><i class="fa-solid fa-check"></i></div></label>
+                    </div>
+                </div>
+                <div class="modal-footer"><label for="group-3" class="btn-cancel-modal">Hủy bỏ</label><button type="submit" class="btn-save-modal">Lưu nhóm</button></div>
+            </form>
         </div>
-      </div>
+    </div>
 
-      <div class="form-row">
-        <div class="form-group">
-          <label class="form-label">Ngày sinh</label>
-          <input type="date" class="form-input" required>
+    <!-- ROLE - MEMBER 3 -->
+    <div class="modal-overlay modal-role-3">
+        <div class="modal-content small-form">
+            <div class="modal-header"><h3>Cập nhật vai trò - Lê Hoàng Nam</h3><label for="role-3" class="close-btn"><i class="fa-solid fa-xmark"></i></label></div>
+            <form>
+                <div class="role-picker-container"><label class="form-label">Thêm vai trò</label>
+                    <div class="role-selector-modal">
+                        <label class="modal-role-item"><input type="checkbox" ><span>Trưởng ban</span><div class="dot-ovr"><i class="fa-solid fa-check"></i></div></label>
+                        <label class="modal-role-item"><input type="checkbox" ><span>Quản trị viên</span><div class="dot-ovr"><i class="fa-solid fa-check"></i></div></label>
+                        <label class="modal-role-item"><input type="checkbox" ><span>Thành viên</span><div class="dot-ovr"><i class="fa-solid fa-check"></i></div></label>
+                        <label class="modal-role-item"><input type="checkbox" checked><span>Cộng tác viên</span><div class="dot-ovr"><i class="fa-solid fa-check"></i></div></label>
+                    </div>
+                </div>
+                <div class="modal-footer"><label for="role-3" class="btn-cancel-modal">Hủy bỏ</label><button type="submit" class="btn-save-modal">Lưu vai trò</button></div>
+            </form>
         </div>
+    </div>
 
-        <div class="form-group">
-          <label class="form-label">Ngày gia nhập</label>
-          <input type="date" class="form-input" required>
+    <!-- ADD MEMBER -->
+    <div class="modal-overlay modal-add">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h3>Thêm thành viên mới</h3>
+                <label for="modal-toggle" class="close-btn"><i class="fa-solid fa-xmark"></i></label>
+            </div>
+            <form>
+                <div class="form-row">
+                    <div class="form-group"><label class="form-label">Họ và tên</label><input type="text" class="form-input" placeholder="VD: Nguyễn Văn A" required></div>
+                    <div class="form-group"><label class="form-label">ID Discord</label><input type="text" class="form-input" placeholder="VD: name#1234" required></div>
+                </div>
+                <div class="form-row">
+                    <div class="form-group"><label class="form-label">Mã số sinh viên</label><input type="text" class="form-input" placeholder="VD: 22687121" required></div>
+                    <div class="form-group">
+                        <label class="form-label">Giới tính</label>
+                        <select class="form-input">
+                            <option>Nam</option><option>Nữ</option><option>Khác</option>
+                        </select>
+                    </div>
+                </div>
+                <div class="form-row">
+                    <div class="form-group"><label class="form-label">Ngày gia nhập</label><input type="date" class="form-input" required></div>
+                    <div class="form-group"><label class="form-label">Ngày sinh</label><input type="date" class="form-input"></div>
+                </div>
+                
+                <div class="role-picker-container">
+                    <label class="form-label">Chọn nhóm phụ trách</label>
+                    <div class="role-selector-modal">
+                        <label class="modal-role-item"><input type="checkbox"><span>Web BCN</span><div class="dot-ovr"><i class="fa-solid fa-check"></i></div></label>
+                        <label class="modal-role-item"><input type="checkbox"><span>Mobile app</span><div class="dot-ovr"><i class="fa-solid fa-check"></i></div></label>
+                        <label class="modal-role-item"><input type="checkbox"><span>Uside</span><div class="dot-ovr"><i class="fa-solid fa-check"></i></div></label>
+                        <label class="modal-role-item"><input type="checkbox"><span>Thực tập sinh Uside</span><div class="dot-ovr"><i class="fa-solid fa-check"></i></div></label>
+                        <label class="modal-role-item"><input type="checkbox"><span>Cộng tác viên BCN</span><div class="dot-ovr"><i class="fa-solid fa-check"></i></div></label>
+                    </div>
+                </div>
+
+                <div class="role-picker-container">
+                    <label class="form-label">Gán vai trò</label>
+                    <div class="role-selector-modal">
+                        <label class="modal-role-item"><input type="checkbox"><span>Trưởng ban</span><div class="dot-ovr"><i class="fa-solid fa-check"></i></div></label>
+                        <label class="modal-role-item"><input type="checkbox"><span>Quản trị viên</span><div class="dot-ovr"><i class="fa-solid fa-check"></i></div></label>
+                        <label class="modal-role-item"><input type="checkbox"><span>Thành viên</span><div class="dot-ovr"><i class="fa-solid fa-check"></i></div></label>
+                        <label class="modal-role-item"><input type="checkbox"><span>Cộng tác viên</span><div class="dot-ovr"><i class="fa-solid fa-check"></i></div></label>
+                    </div>
+                </div>
+
+                <div class="modal-footer">
+                    <label for="modal-toggle" class="btn-cancel-modal">Hủy bỏ</label>
+                    <button type="submit" class="btn-save-modal">Lưu hồ sơ</button>
+                </div>
+            </form>
         </div>
-      </div>
+    </div>
 
-      <div class="role-picker-container">
-        <label class="form-label">Gán vai trò</label>
-
-        <div class="role-selector-modal">
-
-          <label class="modal-role-item">
-            <input type="checkbox">
-            <span>Quản trị viên</span>
-            <div class="dot-ovr"><i class="fa-solid fa-check"></i></div>
-          </label>
-
-          <label class="modal-role-item">
-            <input type="checkbox">
-            <span>Trưởng ban</span>
-            <div class="dot-ovr"><i class="fa-solid fa-check"></i></div>
-          </label>
-
-          <label class="modal-role-item">
-            <input type="checkbox">
-            <span>Thành viên</span>
-            <div class="dot-ovr"><i class="fa-solid fa-check"></i></div>
-          </label>
-
-          <label class="modal-role-item">
-            <input type="checkbox">
-            <span>Cộng tác viên</span>
-            <div class="dot-ovr"><i class="fa-solid fa-check"></i></div>
-          </label>
-
+    <!-- MEMBER 1: TRẦN THỊ A -->
+    <div class="modal-overlay modal-edit-1">
+        <div class="modal-content">
+            <div class="modal-header"><h3>Hồ sơ thuyền viên</h3><label for="edit-1" class="close-btn"><i class="fa-solid fa-xmark"></i></label></div>
+            <form>
+                <div class="form-row">
+                    <div class="form-group"><label class="form-label">Họ và tên</label><input type="text" class="form-input" value="Trần Thị A"></div>
+                    <div class="form-group"><label class="form-label">ID Discord</label><input type="text" class="form-input" value="tranthia_bcn#1234"></div>
+                </div>
+                <div class="form-row">
+                    <div class="form-group"><label class="form-label">Mã số sinh viên</label><input type="text" class="form-input" value="21004521"></div>
+                    <div class="form-group">
+                        <label class="form-label">Giới tính</label>
+                        <select class="form-input">
+                            <option selected>Nữ</option><option>Nam</option>
+                        </select>
+                    </div>
+                </div>
+                <div class="form-row">
+                    <div class="form-group"><label class="form-label">Ngày gia nhập</label><input type="date" class="form-input" value="2024-01-10"></div>
+                    <div class="form-group"><label class="form-label">Trạng thái</label><select class="form-input"><option selected>Hoạt động</option><option>Tạm nghỉ</option></select></div>
+                </div>
+                <div class="role-picker-container"><label class="form-label">Nhóm phụ trách</label>
+                    <div class="role-selector-modal">
+                        <label class="modal-role-item"><input type="checkbox" checked><span>Web BCN</span><div class="dot-ovr"><i class="fa-solid fa-check"></i></div></label>
+                        <label class="modal-role-item"><input type="checkbox"><span>Mobile app</span><div class="dot-ovr"><i class="fa-solid fa-check"></i></div></label>
+                        <label class="modal-role-item"><input type="checkbox" checked><span>Uside</span><div class="dot-ovr"><i class="fa-solid fa-check"></i></div></label>
+                        <label class="modal-role-item"><input type="checkbox"><span>Thực tập sinh Uside</span><div class="dot-ovr"><i class="fa-solid fa-check"></i></div></label>
+                        <label class="modal-role-item"><input type="checkbox" checked><span>Cộng tác viên BCN</span><div class="dot-ovr"><i class="fa-solid fa-check"></i></div></label>
+                    </div>
+                </div>
+                <div class="role-picker-container"><label class="form-label">Vai trò hiện tại</label>
+                    <div class="role-selector-modal">
+                        <label class="modal-role-item"><input type="checkbox" checked><span>Trưởng ban</span><div class="dot-ovr"><i class="fa-solid fa-check"></i></div></label>
+                        <label class="modal-role-item"><input type="checkbox" checked><span>Quản trị viên</span><div class="dot-ovr"><i class="fa-solid fa-check"></i></div></label>
+                        <label class="modal-role-item"><input type="checkbox" checked><span>Thành viên</span><div class="dot-ovr"><i class="fa-solid fa-check"></i></div></label>
+                        <label class="modal-role-item"><input type="checkbox"><span>Cộng tác viên</span><div class="dot-ovr"><i class="fa-solid fa-check"></i></div></label>
+                    </div>
+                </div>
+                <div class="modal-footer"><label for="edit-1" class="btn-cancel-modal">Hủy bỏ</label><button type="submit" class="btn-save-modal">Cập nhật thay đổi</button></div>
+            </form>
         </div>
-      </div>
+    </div>
 
-      <div class="role-picker-container">
-        <label class="form-label">Thêm vào nhóm</label>
-
-        <div class="role-selector-modal">
-
-          <label class="modal-role-item">
-            <input type="checkbox">
-            <span>Web BCN</span>
-            <div class="dot-ovr"><i class="fa-solid fa-check"></i></div>
-          </label>
-
-          <label class="modal-role-item">
-            <input type="checkbox">
-            <span>Mobile app</span>
-            <div class="dot-ovr"><i class="fa-solid fa-check"></i></div>
-          </label>
-
-          <label class="modal-role-item">
-            <input type="checkbox">
-            <span>Uside</span>
-            <div class="dot-ovr"><i class="fa-solid fa-check"></i></div>
-          </label>
-
-          <label class="modal-role-item">
-            <input type="checkbox">
-            <span>Thực tập sinh Uside</span>
-            <div class="dot-ovr"><i class="fa-solid fa-check"></i></div>
-          </label>
-
-          <label class="modal-role-item">
-            <input type="checkbox">
-            <span>Cộng tác viên BCN</span>
-            <div class="dot-ovr"><i class="fa-solid fa-check"></i></div>
-          </label>
-
+    <!-- MEMBER 2: NGUYỄN VĂN B -->
+    <div class="modal-overlay modal-edit-2">
+        <div class="modal-content">
+            <div class="modal-header"><h3>Hồ sơ thuyền viên</h3><label for="edit-2" class="close-btn"><i class="fa-solid fa-xmark"></i></label></div>
+            <form>
+                <div class="form-row">
+                    <div class="form-group"><label class="form-label">Họ và tên</label><input type="text" class="form-input" value="Nguyễn Văn B"></div>
+                    <div class="form-group"><label class="form-label">ID Discord</label><input type="text" class="form-input" value="nvanb_dev#8888"></div>
+                </div>
+                <div class="form-row">
+                    <div class="form-group"><label class="form-label">Mã số sinh viên</label><input type="text" class="form-input" value="22687121"></div>
+                    <div class="form-group">
+                        <label class="form-label">Giới tính</label>
+                        <select class="form-input">
+                            <option>Nữ</option><option selected>Nam</option>
+                        </select>
+                    </div>
+                </div>
+                <div class="form-row">
+                    <div class="form-group"><label class="form-label">Ngày gia nhập</label><input type="date" class="form-input" value="2024-02-15"></div>
+                    <div class="form-group"><label class="form-label">Trạng thái</label><select class="form-input"><option selected>Hoạt động</option><option>Tạm nghỉ</option></select></div>
+                </div>
+                <div class="role-picker-container"><label class="form-label">Nhóm phụ trách</label>
+                    <div class="role-selector-modal">
+                        <label class="modal-role-item"><input type="checkbox"><span>Web BCN</span><div class="dot-ovr"><i class="fa-solid fa-check"></i></div></label>
+                        <label class="modal-role-item"><input type="checkbox" checked><span>Mobile app</span><div class="dot-ovr"><i class="fa-solid fa-check"></i></div></label>
+                        <label class="modal-role-item"><input type="checkbox" checked><span>Uside</span><div class="dot-ovr"><i class="fa-solid fa-check"></i></div></label>
+                        <label class="modal-role-item"><input type="checkbox"><span>Thực tập sinh Uside</span><div class="dot-ovr"><i class="fa-solid fa-check"></i></div></label>
+                        <label class="modal-role-item"><input type="checkbox"><span>Cộng tác viên BCN</span><div class="dot-ovr"><i class="fa-solid fa-check"></i></div></label>
+                    </div>
+                </div>
+                <div class="role-picker-container"><label class="form-label">Vai trò hiện tại</label>
+                    <div class="role-selector-modal">
+                        <label class="modal-role-item"><input type="checkbox"><span>Trưởng ban</span><div class="dot-ovr"><i class="fa-solid fa-check"></i></div></label>
+                        <label class="modal-role-item"><input type="checkbox"><span>Quản trị viên</span><div class="dot-ovr"><i class="fa-solid fa-check"></i></div></label>
+                        <label class="modal-role-item"><input type="checkbox" checked><span>Thành viên</span><div class="dot-ovr"><i class="fa-solid fa-check"></i></div></label>
+                        <label class="modal-role-item"><input type="checkbox"><span>Cộng tác viên</span><div class="dot-ovr"><i class="fa-solid fa-check"></i></div></label>
+                    </div>
+                </div>
+                <div class="modal-footer"><label for="edit-2" class="btn-cancel-modal">Hủy bỏ</label><button type="submit" class="btn-save-modal">Cập nhật thay đổi</button></div>
+            </form>
         </div>
-      </div>
+    </div>
 
-      <div class="modal-footer">
-        <label for="modal-toggle" class="btn-cancel-modal">Hủy bỏ</label>
-        <button type="submit" class="btn-save-modal">Lưu hồ sơ</button>
-      </div>
+    <!-- MEMBER 3: LÊ HOÀNG NAM -->
+    <div class="modal-overlay modal-edit-3">
+        <div class="modal-content">
+            <div class="modal-header"><h3>Hồ sơ thuyền viên</h3><label for="edit-3" class="close-btn"><i class="fa-solid fa-xmark"></i></label></div>
+            <form>
+                <div class="form-row">
+                    <div class="form-group"><label class="form-label">Họ và tên</label><input type="text" class="form-input" value="Lê Hoàng Nam"></div>
+                    <div class="form-group"><label class="form-label">ID Discord</label><input type="text" class="form-input" value="namle_creative#0099"></div>
+                </div>
+                <div class="form-row">
+                    <div class="form-group"><label class="form-label">Mã số sinh viên</label><input type="text" class="form-input" value="23001245"></div>
+                    <div class="form-group">
+                        <label class="form-label">Giới tính</label>
+                        <select class="form-input">
+                            <option>Nữ</option><option selected>Nam</option>
+                        </select>
+                    </div>
+                </div>
+                <div class="form-row">
+                    <div class="form-group"><label class="form-label">Ngày gia nhập</label><input type="date" class="form-input" value="2024-03-20"></div>
+                    <div class="form-group"><label class="form-label">Trạng thái</label><select class="form-input"><option selected>Hoạt động</option><option>Tạm nghỉ</option></select></div>
+                </div>
+                <div class="role-picker-container"><label class="form-label">Nhóm phụ trách</label>
+                    <div class="role-selector-modal">
+                        <label class="modal-role-item"><input type="checkbox"><span>Web BCN</span><div class="dot-ovr"><i class="fa-solid fa-check"></i></div></label>
+                        <label class="modal-role-item"><input type="checkbox"><span>Mobile app</span><div class="dot-ovr"><i class="fa-solid fa-check"></i></div></label>
+                        <label class="modal-role-item"><input type="checkbox"><span>Uside</span><div class="dot-ovr"><i class="fa-solid fa-check"></i></div></label>
+                        <label class="modal-role-item"><input type="checkbox" checked><span>Thực tập sinh Uside</span><div class="dot-ovr"><i class="fa-solid fa-check"></i></div></label>
+                        <label class="modal-role-item"><input type="checkbox" checked><span>Cộng tác viên BCN</span><div class="dot-ovr"><i class="fa-solid fa-check"></i></div></label>
+                    </div>
+                </div>
+                <div class="role-picker-container"><label class="form-label">Vai trò hiện tại</label>
+                    <div class="role-selector-modal">
+                        <label class="modal-role-item"><input type="checkbox"><span>Trưởng ban</span><div class="dot-ovr"><i class="fa-solid fa-check"></i></div></label>
+                        <label class="modal-role-item"><input type="checkbox"><span>Quản trị viên</span><div class="dot-ovr"><i class="fa-solid fa-check"></i></div></label>
+                        <label class="modal-role-item"><input type="checkbox"><span>Thành viên</span><div class="dot-ovr"><i class="fa-solid fa-check"></i></div></label>
+                        <label class="modal-role-item"><input type="checkbox" checked><span>Cộng tác viên</span><div class="dot-ovr"><i class="fa-solid fa-check"></i></div></label>
+                    </div>
+                </div>
+                <div class="modal-footer"><label for="edit-3" class="btn-cancel-modal">Hủy bỏ</label><button type="submit" class="btn-save-modal">Cập nhật thay đổi</button></div>
+            </form>
+        </div>
+    </div>
 
-    </form>
+    <!-- DISABLE -->
+    <div class="modal-overlay modal-disable-1">
+        <div class="modal-content modal-confirm">
+            <div class="confirm-icon"><i class="fa-solid fa-circle-exclamation"></i></div>
+            <h3>Vô hiệu hóa Trần Thị A?</h3><p style="margin: 20px 0 30px; color: var(--slate-500);">Bạn có chắc muốn tạm dừng quyền truy cập của người này?</p>
+            <div class="modal-footer"><label for="disable-1" class="btn-cancel-modal">Quay lại</label><button type="button" class="btn-save-modal" style="background: #EF4444;">Vô hiệu hóa</button></div>
+        </div>
+    </div>
+    
+    <div class="modal-overlay modal-disable-2">
+        <div class="modal-content modal-confirm">
+            <div class="confirm-icon"><i class="fa-solid fa-circle-exclamation"></i></div>
+            <h3>Vô hiệu hóa Nguyễn Văn B?</h3><p style="margin: 20px 0 30px; color: var(--slate-500);">Bạn có chắc muốn tạm dừng quyền truy cập của người này?</p>
+            <div class="modal-footer"><label for="disable-2" class="btn-cancel-modal">Quay lại</label><button type="button" class="btn-save-modal" style="background: #EF4444;">Vô hiệu hóa</button></div>
+        </div>
+    </div>
 
-  </div>
-</div>
+    <div class="modal-overlay modal-disable-3">
+        <div class="modal-content modal-confirm">
+            <div class="confirm-icon"><i class="fa-solid fa-circle-exclamation"></i></div>
+            <h3>Vô hiệu hóa Lê Hoàng Nam?</h3><p style="margin: 20px 0 30px; color: var(--slate-500);">Bạn có chắc muốn tạm dừng quyền truy cập của người này?</p>
+            <div class="modal-footer"><label for="disable-3" class="btn-cancel-modal">Quay lại</label><button type="button" class="btn-save-modal" style="background: #EF4444;">Vô hiệu hóa</button></div>
+        </div>
+    </div>
 
-    <div class="lighthouse-beam"></div>
 </body>
 </html>
