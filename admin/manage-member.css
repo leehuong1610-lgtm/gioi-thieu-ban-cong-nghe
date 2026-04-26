@@ -758,22 +758,6 @@
             }
         }
 
-        .nav-list, 
-        .content-body, 
-        .section-card, 
-        .table-scroll-container,
-        .modal-content {
-            scrollbar-width: none;
-            -ms-overflow-style: none;
-        }
-
-        .nav-list::-webkit-scrollbar,
-        .content-body::-webkit-scrollbar,
-        .section-card::-webkit-scrollbar,
-        .table-scroll-container::-webkit-scrollbar,
-        .modal-content::-webkit-scrollbar {
-            display: none;
-        }
 
         @media (max-width: 1024px) {
             #sidebar {
